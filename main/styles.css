@@ -12,7 +12,6 @@ body {
 #row {
   padding-top: 30px;
   position: absolute;
-  margin-left: calc(31vh + 15vw);
   padding-bottom: 50px;
   width: auto;
   display: -webkit-box;
