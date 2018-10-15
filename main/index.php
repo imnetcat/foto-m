@@ -9,10 +9,10 @@
 </head>
 <body data-role="page">
   <div id="row">
-    <div class="item">
+    <a href=""><div class="item">
       <img class="img" src="main/item-1.jpg">
       <div class="description"></div>
-    </div>
+    </div></a>
     <div class="item">
       <img class="img" src="main/item-2.jpg">
       <div class="description"></div>
