@@ -11,12 +11,7 @@
   <nav role='navigation' id="menu">
     <ul>
       <li><a href="/ru/">Главная</a></li>
-      <li><a href="#" style="cursor: default;">Про</a>
-        <ul>
-          <li><a href="/ru/about/me/">Меня</a></li>
-          <li><a href="/ru/about/">Мои выставки</a></li>
-        </ul>
-      </li>
+      <li><a href="#" style="cursor: default;">Про</aЮ</li>
       <li><a href="#" style="background-image: none; cursor: default;">Магазин</a></li>
       <li><a href="/ru/archive/">Архив</a></li>
       <li><a href="/ru/contacts/">Контакты</a></li>
