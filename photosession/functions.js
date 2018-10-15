@@ -16,50 +16,6 @@ function build_win(id, src, description){
 function adaptation_1(){
   var client_w = $("body").width();
   var client_h = $("body").height();
-  if(client_w < 1237 || client_h < 757){
-    $("#menu").prepend($("<div id='toAbout'>О нас</div>"));
-    $("#menu").prepend($("<div id='back'>На главную</div>"));
-    $("#toAbout").on("click touch", function() {
-      $("#about").css({
-        "top": "100%"  
-      });
-      $("#toAbout").hide();
-      $("#logo, #back").on("click touch", function(){
-        $("#about").css({
-          "top": "-100vh"  
-        });
-        $("#toAbout").show();
-      });
-    });
-    $("#logo").attr("src", "logo-minimal.jpg");
-    $("#menu").css({
-      "height": "auto",
-      "paddingLeft": "0",
-      "paddingRight": "0",
-      "paddingTop": "0",
-      "width": "100%"
-    });  
-    $("#row").css({
-      "marginLeft": "0",
-      "paddingTop": "150px",
-      "paddingLeft": "calc(2.5vh + 1vw)",
-      "top": "90px",
-    });
-    $("#logo").css({
-     "maxHeight": "100%",
-     "position": "absolute",
-     "right": "0"
-    });
-    $("#about").css({
-      "backgroundColor": "white",
-      "display": "inlineBlock",
-      "top": "-100vh",
-      "height": "100vh",
-      "z-index": "100",
-      "font-size": "2vh",
-      "position": "absolute"
-    });
-  }
 }
 function adaptation_2(){
 }
