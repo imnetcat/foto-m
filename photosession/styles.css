@@ -1,4 +1,5 @@
 body {
+  background: black;
   height: 100vh;
   padding: 0;
   margin: 0;
@@ -7,7 +8,6 @@ body {
   font-weight: normal;
   font-stretch: normal;
   font-variant: small-caps;
-  background-color: white;
 }
 #row {
   padding-top: 30px;
