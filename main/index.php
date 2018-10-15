@@ -9,7 +9,7 @@
 </head>
 <body data-role="page">
   <div id="row">
-    <a href=""><div class="item">
+    <a href="photosession/index.php"><div class="item">
       <img class="img" src="main/item-1.jpg">
       <div class="description"></div>
     </div></a>

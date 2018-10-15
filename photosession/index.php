@@ -26,45 +26,9 @@
       <li><a href="/ru/contacts/">Контакты</a></li>
     </ul>
   </nav>
-  <div id="currentItem"><img id='currentImg'><div id="currentISim"></div><div id="currentDes"></div><div class="buyBtn">Купить</div><div class="buyBtn" style="margin-top:40px">Заказать</div><div class="fil-close-btn" style="top: 550px;"><div></div><div></div></div></div>
-  <div id="container">
-    <div id="items">
-      <div class="row">
-        <div class="btn left"><span></span></div>
-        <div id="row">
-        </div>
-        <div class="btn right"><span></span></div>
-      </div>
-    </div>
-    <div id="filtersHead"><p>  </p></div>
-    <div id="filters">
-     <? include "filters.html"; ?>
-    </div>
-    <div id="to_filters">
-     <? include "to_filters.html"; ?>
-    </div>
-    <div id="use_filters">
-      <div class="use_filters">сортировать</div>
-    </div>
+  
+  <div id="row">
+    
   </div>
-  <div id="fullImg">
-    <img src=""/>
-    <div id="floatingCirclesG">
-      <div class="f_circleG" id="frotateG_01"></div>
-      <div class="f_circleG" id="frotateG_02"></div>
-      <div class="f_circleG" id="frotateG_03"></div>
-      <div class="f_circleG" id="frotateG_04"></div>
-      <div class="f_circleG" id="frotateG_05"></div>
-      <div class="f_circleG" id="frotateG_06"></div>
-      <div class="f_circleG" id="frotateG_07"></div>
-      <div class="f_circleG" id="frotateG_08"></div>
-    </div>
-    <div class="fil-close-btn" style="top: 80vh; left: 49%;">
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <footer>
-  </footer>
 </body>
 </html>
