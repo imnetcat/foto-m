@@ -2,10 +2,6 @@
 <html><head>
   <link rel="stylesheet" href="styles.css" type="text/css">
   <link rel="stylesheet" href="menu.css" type="text/css">
-  <link rel="stylesheet" href="use_filters.css" type="text/css">
-  <link rel="stylesheet" href="to_filters.css" type="text/css">
-  <link rel="stylesheet" href="filters-1.css" type="text/css">
-  <link rel="stylesheet" href="filters-2.css" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="functions.js"></script>
   <script src="pre-load.js"></script>
