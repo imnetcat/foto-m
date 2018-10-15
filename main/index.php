@@ -8,21 +8,23 @@
   <script src="main/post-load.js"></script>
 </head>
 <body data-role="page">
+  <div id="row">
     <div class="item">
-        <img class="img" src="main/item-1.jpg">
-        <div class="description"></div>
+      <img class="img" src="main/item-1.jpg">
+      <div class="description"></div>
     </div>
     <div class="item">
-        <img class="img" src="main/item-2.jpg">
-        <div class="description"></div>
+      <img class="img" src="main/item-2.jpg">
+      <div class="description"></div>
     </div>
     <div class="item">
-        <img class="img" src="main/item-2.jpg">
-        <div class="description"></div>
+      <img class="img" src="main/item-2.jpg">
+      <div class="description"></div>
     </div>
     <div class="item">
-        <img class="img" src="main/item-1.jpg">
-        <div class="description"></div>
+      <img class="img" src="main/item-1.jpg">
+      <div class="description"></div>
     </div>
+  </div>
 </body>
 </html>
