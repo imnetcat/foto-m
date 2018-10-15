@@ -2,7 +2,7 @@
 <html><head>
     <title></title>
   <link rel="stylesheet" href="main/styles.css" type="text/css">
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="main/functions.js"></script>
   <script src="main/pre-load.js"></script>
   <script src="main/post-load.js"></script>
