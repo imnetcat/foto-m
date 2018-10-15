@@ -1,0 +1,69 @@
+/* line 9, use_filters.scss */
+#use_filters {
+  position: absolute;
+  width: auto;
+  height: 5vh;
+  margin-top: 80vh;
+  margin-left: 5vw;
+  z-index: 100; }
+  /* line 16, use_filters.scss */
+  #use_filters .use_filters {
+    display: block;
+    width: auto;
+    height: 4vh;
+    border: 1px solid linear-gradient(to top, #AEAEAE 0%, #FFFFFF 51%);
+    overflow: hidden;
+    color: linear-gradient(to top, #AEAEAE 0%, #FFFFFF 51%);
+    line-height: 4vh;
+    text-transform: capitalize;
+    margin-top: 1vh;
+    margin-left: 2vh;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: visibility 0s, z-index 0s, letter-spacing 1s -webkit-transform 1s ease-out;
+    transition: visibility 0s, z-index 0s, letter-spacing 1s, transform 1s ease-out;
+    border: none;
+    font-size: .9em;
+    display: inline-block;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center; }
+    /* line 44, use_filters.scss */
+    #use_filters .use_filters:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to top, #AEAEAE 0%, #FFFFFF 51%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%); }
+    /* line 56, use_filters.scss */
+    #use_filters .use_filters:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to top, #AEAEAE 0%, #FFFFFF 51%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%); }
+    /* line 68, use_filters.scss */
+    #use_filters .use_filters:hover {
+      letter-spacing: 2px;
+      color: linear-gradient(to top, #AEAEAE 0%, #FFFFFF 51%); }
+      /* line 71, use_filters.scss */
+      #use_filters .use_filters:hover:before, #use_filters .use_filters:hover:after {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%); }
