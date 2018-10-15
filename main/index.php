@@ -10,6 +10,21 @@
   <script src="ru/post-load.js"></script>
 </head>
 <body data-role="page">
-    
+    <div class="item">
+        <img class="img" src="">
+        <div class="description"></div>
+    </div>
+    <div class="item">
+        <img class="img" src="">
+        <div class="description"></div>
+    </div>
+    <div class="item">
+        <img class="img" src="">
+        <div class="description"></div>
+    </div>
+    <div class="item">
+        <img class="img" src="">
+        <div class="description"></div>
+    </div>
 </body>
 </html>
