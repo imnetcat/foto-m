@@ -10,19 +10,19 @@
 </head>
 <body data-role="page">
     <div class="item">
-        <img class="img" src="">
+        <img class="img" src="item-1.jpg">
         <div class="description"></div>
     </div>
     <div class="item">
-        <img class="img" src="">
+        <img class="img" src="item-2.jpg">
         <div class="description"></div>
     </div>
     <div class="item">
-        <img class="img" src="">
+        <img class="img" src="item-2.jpg">
         <div class="description"></div>
     </div>
     <div class="item">
-        <img class="img" src="">
+        <img class="img" src="item-1.jpg">
         <div class="description"></div>
     </div>
 </body>
