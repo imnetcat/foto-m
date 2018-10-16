@@ -5,13 +5,13 @@ require_once "db_init.php";
 
 
 switch ($_POST['action']){
-  case 'add_in_photosession':
+  case 'add_in':
     $image = $_POST['image'];
     $derectory = $_POST['derectory'];
     $description = $_POST['description'];
     echo add_in_shop($database, $derectory, $image, $description);
   break;
-  case 'get_photosession':
+  case 'get':
     $derectory = $_POST['derectory'];
     echo get_shop($database, $derectory);
   break;
