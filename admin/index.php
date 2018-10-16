@@ -82,7 +82,7 @@
               var div = $("<div class='item'></div>");
 	      var a = $("<div class='a' style='position:absolute; width:600px;'></div>");
 	      a.append($("<span>ID: </span><span class='id'>"+allItems[n].id+"</span><br>"+
-	      "<span>Файл: </span><span class='image'>"+allItems[n].image.split("/")[1]+"</span><br>"++
+	      "<span>Файл: </span><span class='image'>"+allItems[n].image.split("/")[1]+"</span><br>"+
               "<span>Описание: </span><span class='description'>"+allItems[n].description+"</span><br>"));
 	      div.append(a);
 	      var b = $("<img class='b' style='width:175px; height:175px; position:absolute; margin-left:600px' src='photosession/"+allItems[n].image+"'>");
