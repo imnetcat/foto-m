@@ -151,31 +151,6 @@
           this.id = array[0];
           this.image = array[1];
           this.description = array[2];
-          this.subImg1 = array[3];
-          this.subImg2 = array[4];
-          this.subImg3 = array[5];
-          this.subImg4 = array[6];
-          this.subImg5 = array[7];
-          this.subImg6 = array[8];
-          this.subImg7 = array[9];
-          this.subImg8 = array[10];
-          this.subImg9 = array[11];
-          this.subImg10 = array[12];
-          this.subImg11 = array[13];
-          this.subImg12 = array[14];
-          this.subImg13 = array[15];
-          this.subImg14 = array[16];
-          this.subImg15 = array[17];
-          this.subImg16 = array[18];
-          this.subImg17 = array[19];
-          this.subImg18 = array[20];
-          this.subImg19 = array[21];
-          this.subImg20 = array[22];
-          this.subImg21 = array[23];
-          this.subImg22 = array[24];
-          this.subImg23 = array[25];
-          this.subImg24 = array[26];
-          this.subImg25 = array[27];
         }
       }
       
