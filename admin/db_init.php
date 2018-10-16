@@ -1,5 +1,4 @@
 <?
-include "db.php";
 
 $query ="CREATE TABLE  IF NOT EXISTS photosession (
   id INT(50) NOT NULL,
