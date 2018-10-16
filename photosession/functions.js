@@ -28,7 +28,6 @@ function load_all(){
       action: 'load_all'
     },
     success: function(data){
-      console.log("true");
       var raw_data = data.split('array');
       var allItems = new Array();
       for( n = 1; n < raw_data.length; n++){
