@@ -50,8 +50,9 @@
           type: "POST",
 	  url: "actions.php",
 	  data: {
-	    action: 'add_in_photosession',
+	    action: 'add_in',
 	    image: "photosession/"+$('#new_image').val(),
+	    derectory: "photosession",
 	    description: $('#new_description').val()
 	  },
           success: function(data){
@@ -66,7 +67,8 @@
           type: "POST",
           url: "actions.php",
           data: {
-            action: 'get_photosession'
+            action: 'get',
+	    derectory: "photosession"
           },
           success: function(data){
             var raw_data = data.split('array');
