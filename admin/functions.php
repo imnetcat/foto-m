@@ -1,15 +1,15 @@
 <?
 
-function add_in($database, $image, $derectory, $description, $sub_img_1, $sub_img_2, $sub_img_3, $sub_img_4, $sub_img_5, $sub_img_6, $sub_img_7, $sub_img_8, $sub_img_9, $sub_img_10, $sub_img_11, $sub_img_12, $sub_img_13, $sub_img_14, $sub_img_15, $sub_img_16, $sub_img_17, $sub_img_18, $sub_img_19, $sub_img_20, $sub_img_21, $sub_img_22, $sub_img_23, $sub_img_24, $sub_img_25){
+function add_in($database, $image, $derectory, $description){
   $query = "SELECT MAX(id) FROM ".$derectory;
   if($result = mysqli_query($database, $query)){
     while ($row = mysqli_fetch_row($result)) {
       $new_id = array_pop($row) + 1;
     }
   }
-  $query = "INSERT INTO ".$derectory." ( id, image, description, sub_img_1, sub_img_2, sub_img_3, sub_img_4, sub_img_5, sub_img_6, sub_img_7, sub_img_8, sub_img_9, sub_img_10, sub_img_11, sub_img_12, sub_img_13, sub_img_14, sub_img_15, sub_img_16, sub_img_17, sub_img_18, sub_img_19, sub_img_20, sub_img_21, sub_img_22, sub_img_23, sub_img_24, sub_img_25) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+  $query = "INSERT INTO $derectory ( id, image, description) VALUES (?,?,?)";
   $stmt = mysqli_prepare($database, $query);
-  mysqli_stmt_bind_param($stmt, "issssssssssssssssssssssss", $new_id, $image, $description, $sub_img_1, $sub_img_2, $sub_img_3, $sub_img_4, $sub_img_5, $sub_img_6, $sub_img_7, $sub_img_8, $sub_img_9, $sub_img_10, $sub_img_11, $sub_img_12, $sub_img_13, $sub_img_14, $sub_img_15, $sub_img_16, $sub_img_17, $sub_img_18, $sub_img_19, $sub_img_20, $sub_img_21, $sub_img_22, $sub_img_23, $sub_img_24, $sub_img_25);
+  mysqli_stmt_bind_param($stmt, "iss", $new_id, $image, $description);
   if(mysqli_stmt_execute($stmt)){
     mysqli_stmt_close($stmt);
     return "Изображение успешно добавлено!";
@@ -19,7 +19,7 @@ function add_in($database, $image, $derectory, $description, $sub_img_1, $sub_im
 }
 
 function delete($database, $id, $derectory){
-  $query = "DELETE FROM ".$derectory." WHERE id=".$id;
+  $query = "DELETE FROM $derectory WHERE id=".$id;
   if($result = mysqli_query($database, $query)){ 
     return "Изображение номер ". $id . " удалено успешно";
   } else {
@@ -27,10 +27,10 @@ function delete($database, $id, $derectory){
   }
 }
 
-function change($database, $id, $derectory, $image, $description, $sub_img_1, $sub_img_2, $sub_img_3, $sub_img_4, $sub_img_5, $sub_img_6, $sub_img_7, $sub_img_8, $sub_img_9, $sub_img_10, $sub_img_11, $sub_img_12, $sub_img_13, $sub_img_14, $sub_img_15, $sub_img_16, $sub_img_17, $sub_img_18, $sub_img_19, $sub_img_20, $sub_img_21, $sub_img_22, $sub_img_23, $sub_img_24, $sub_img_25){
-  $query = "UPDATE $derectory SET image=?, description=?, sub_img_1=?, sub_img_2=?, sub_img_3=?, sub_img_4=?, sub_img_5=?, sub_img_6=?, sub_img_7=?, sub_img_8=?, sub_img_9=?, sub_img_10=?, sub_img_11=?, sub_img_12=?, sub_img_13=?, sub_img_14=?, sub_img_15=?, sub_img_16=?, sub_img_17=?, sub_img_18=?, sub_img_19=?, sub_img_20=?, sub_img_21=?, sub_img_22=?, sub_img_23=?, sub_img_24=?, sub_img_25=? WHERE id=$id";
+function change($database, $id, $derectory, $image, $description){
+  $query = "UPDATE $derectory SET image=?, description=? WHERE id=$id";
   $stmt = mysqli_prepare($database, $query);
-  mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssssss", $image, $description, $sub_img_1, $sub_img_2, $sub_img_3, $sub_img_4, $sub_img_5, $sub_img_6, $sub_img_7, $sub_img_8, $sub_img_9, $sub_img_10, $sub_img_11, $sub_img_12, $sub_img_13, $sub_img_14, $sub_img_15, $sub_img_16, $sub_img_17, $sub_img_18, $sub_img_19, $sub_img_20, $sub_img_21, $sub_img_22, $sub_img_23, $sub_img_24, $sub_img_25);
+  mysqli_stmt_bind_param($stmt, "ss", $image, $description);
   if(mysqli_stmt_execute($stmt)){
     mysqli_stmt_close($stmt);
     return "Изображение успешно изменено";
