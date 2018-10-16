@@ -83,7 +83,7 @@
 	      "<span>Файл: </span><span class='image'>"+allItems[n].image.split("/")[1]+"</span><br>"+
               "<span>Описание: </span><span class='description'>"+allItems[n].description+"</span><br>"));
 	      div.append(a);
-	      var b = $("<img class='b' style='width:175px; height:175px; position:absolute; margin-left:600px' src='/"+allItems[n].image+"'>");
+	      var b = $("<img class='b' style='width:175px; height:175px; position:absolute; margin-left:600px' src=allItems[n].image.split("/")[0]+'/items/"+allItems[n].image.split("/")[1]+"'>");
 	      div.append(b);
 	      var c = $("<div class='c' style='margin-left:900px'><br><button class='del'>Удалить</button><br><br><button class='change'>Изменить</button><br><br><button class='copy'>Скопировать</button></div>");
 	      div.append(c);
