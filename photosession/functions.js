@@ -63,7 +63,7 @@ function setFirst(allItems){
   var row = $('#row');
   var html;
   for( n = 0; n <  allItems.length; n++){
-    item = build(allItems[n].id, "/"+allItems[n].image, allItems[n].description);
+    item = build(allItems[n].id, "/"+allItems[n].image.split("/")[0]+"/items/"+allItems[n].image.split("/")[1], allItems[n].description);
     html = row.html();
     row.html(html + item);
   }
