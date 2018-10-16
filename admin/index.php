@@ -56,6 +56,7 @@
 	    description: $('#new_description').val()
 	  },
           success: function(data){
+		  console.log($('#info').html($('#info').html() + "<br>" + data));
 	    $('#info').html($('#info').html() + "<br>" + data);
           }
         });
