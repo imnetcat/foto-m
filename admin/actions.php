@@ -9,11 +9,11 @@ switch ($_POST['action']){
     $image = $_POST['image'];
     $derectory = $_POST['derectory'];
     $description = $_POST['description'];
-    echo add_in_shop($database, $derectory, $image, $description);
+    echo add_in($database, $derectory, $image, $description);
   break;
   case 'get':
     $derectory = $_POST['derectory'];
-    echo get_shop($database, $derectory);
+    echo get($database, $derectory);
   break;
   case 'delete':
     $id = $_POST['id'];
