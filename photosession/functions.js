@@ -34,6 +34,7 @@ function load_all(){
         allItems[n-1] = new Item(php_array_to_js_array(raw_data[n]));
       }
       console.log("nice");
+      console.log(allItems);
       setFirst(allItems);
     }
   });
