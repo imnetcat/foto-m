@@ -5,11 +5,12 @@ $query ="CREATE TABLE  IF NOT EXISTS photosession (
   id INT(50) NOT NULL,
   image VARCHAR(60) NOT NULL,
   description VARCHAR(60) NOT NULL,
+  sub_img_1 VARCHAR(60) NULL,
   sub_img_2 VARCHAR(60) NULL,
   sub_img_3 VARCHAR(60) NULL,
   sub_img_4 VARCHAR(60) NULL,
-  sub_img_5 VARCHAR(60) NULL,
-  sub_img_6 VARCHAR(1000) NULL
+  sub_img_5 VARCHAR(1000) NULL
+  sub_img_6 VARCHAR(60) NULL,
   sub_img_7 VARCHAR(60) NULL,
   sub_img_8 VARCHAR(60) NULL,
   sub_img_9 VARCHAR(60) NULL,
