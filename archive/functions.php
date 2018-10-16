@@ -1,91 +1,12 @@
 <?
-function found_items($database, $filters){
-  $id = array();
-  $types = explode("-_-", $filters["types"]);
-  $query ="SELECT id, type FROM archive";
-  for( $x = 0; $x < count($types); $x++ ){
-    if($result = mysqli_query($database, $query)){
-      while ($row = mysqli_fetch_row($result)) {
-        if($row[1] == $types[$x]){
-          $id['types'][count($id['types'])] = $row[0];
-        }
-      }
-    }  
-  }
-  $stones = explode("-_-", $filters["stones"]);
-  $query ="SELECT id, stone FROM archive";
+function load_all($database){
+  $raw = " ";
+  $query ="SELECT id, image, description, sub_img_1, sub_img_2, sub_img_3, sub_img_4, sub_img_5, sub_img_6, sub_img_7, sub_img_8, sub_img_9, sub_img_10, sub_img_11, sub_img_12, sub_img_13, sub_img_14, sub_img_15, sub_img_16, sub_img_17, sub_img_18, sub_img_19, sub_img_20, sub_img_21, sub_img_22, sub_img_23, sub_img_24, sub_img_25, sub_des_1, sub_des_2, sub_des_3, sub_des_4, sub_des_5, sub_des_6, sub_des_7, sub_des_8, sub_des_9, sub_des_10, sub_des_11, sub_des_12, sub_des_13, sub_des_14, sub_des_15, sub_des_16, sub_des_17, sub_des_18, sub_des_19, sub_des_20, sub_des_21, sub_des_22, sub_des_23, sub_des_24, sub_des_25 FROM items";
   if($result = mysqli_query($database, $query)){
     while ($row = mysqli_fetch_row($result)) {
-      $item_filters = explode(", ", $row[1]);
-      for($n = 0; $n < count($item_filters); $n++ ){
-        for( $x = 0; $x < count($stones); $x++ ){
-          if($item_filters[$n] == $stones[$x]){
-            if($id['stones'][count($id['stones'])-1] != $row[0]){
-              $id['stones'][count($id['stones'])] = $row[0];
-            }
-          }
-        }
-      }
-    }  
-  }
-  $technology = explode("-_-", $filters["technology"]);
-  $query ="SELECT id, technology FROM archive";  
-  if($result = mysqli_query($database, $query)){
-    while ($row = mysqli_fetch_row($result)) {
-      $item_filters = explode(", ", $row[1]);
-      for($n = 0; $n < count($item_filters); $n++ ){
-        for( $x = 0; $x < count($technology); $x++ ){
-          if($item_filters[$n] == $technology[$x]){
-            if($id['technology'][count($id['technology'])-1] != $row[0]){
-              $id['technology'][count($id['technology'])] = $row[0];
-            }
-          }
-        }
-      }
-    }  
-  }
-  return $id;
-}
-
-function id_parse($array_of_id){
-  $parsed = array();
-  for( $n = 0; $n < count($array_of_id['types']); $n++ ){
-    for( $x = 0; $x < count($array_of_id['stones']); $x++ ){
-      if($array_of_id['types'][$n] == $array_of_id['stones'][$x]){
-        $parsed[count($parsed)] = $array_of_id['types'][$n];
-      }
+      $raw .= var_dump($row);
     }
   }
-  for( $n = 0; $n < count($parsed); $n++ ){
-    for( $x = 0; $x < count($array_of_id['technology']); $x++ ){
-      if($parsed[$n] == $array_of_id['technology'][$x]){
-        $parsed__[count($parsed__)] = $parsed[$n];
-      }
-    }
-  }
-  $parsed = $parsed__;
-  $parsed__ = array();
-  return $parsed;
-}
-
-function get_items($database, $id, $sortings){
-  if($sortings['cost'] == "cost-down-to-up"){
-    $sort = "cost";
-  }else{
-    $sort = "cost DESC";
-  }
-  $raw = array();
-  $items = " ";
-  $query ="SELECT id, image, type, stone, technology, cost, filter_5, description FROM archive ORDER BY " . $sort;
-  if($result = mysqli_query($database, $query)){
-    while ($row = mysqli_fetch_row($result)) {
-      for( $n = 0; $n < count($id); $n++ ){
-        if($row[0] == $id[$n]){
-          $items .= var_dump($row);
-        }
-      }
-    }
-  }
-  return $items;
+  return $raw;
 }
 ?>
