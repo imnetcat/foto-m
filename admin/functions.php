@@ -27,7 +27,7 @@ function delete($database, $id, $derectory){
   }
 }
 
-function change($database, $id, $derectory, $image, $sub_img_1, $sub_img_2, $sub_img_3, $sub_img_4, $sub_img_5, $sub_img_6, $sub_img_7, $sub_img_8, $sub_img_9, $sub_img_10, $sub_img_11, $sub_img_12, $sub_img_13, $sub_img_14, $sub_img_15, $sub_img_16, $sub_img_17, $sub_img_18, $sub_img_19, $sub_img_20, $sub_img_21, $sub_img_22, $sub_img_23, $sub_img_24, $sub_img_25){
+function change($database, $id, $derectory, $image, $description, $sub_img_1, $sub_img_2, $sub_img_3, $sub_img_4, $sub_img_5, $sub_img_6, $sub_img_7, $sub_img_8, $sub_img_9, $sub_img_10, $sub_img_11, $sub_img_12, $sub_img_13, $sub_img_14, $sub_img_15, $sub_img_16, $sub_img_17, $sub_img_18, $sub_img_19, $sub_img_20, $sub_img_21, $sub_img_22, $sub_img_23, $sub_img_24, $sub_img_25){
   $query = "UPDATE $derectory SET image=?, description=?, sub_img_1=?, sub_img_2=?, sub_img_3=?, sub_img_4=?, sub_img_5=?, sub_img_6=?, sub_img_7=?, sub_img_8=?, sub_img_9=?, sub_img_10=?, sub_img_11=?, sub_img_12=?, sub_img_13=?, sub_img_14=?, sub_img_15=?, sub_img_16=?, sub_img_17=?, sub_img_18=?, sub_img_19=?, sub_img_20=?, sub_img_21=?, sub_img_22=?, sub_img_23=?, sub_img_24=?, sub_img_25=? WHERE id=$id";
   $stmt = mysqli_prepare($database, $query);
   mysqli_stmt_bind_param($stmt, "ssssssssssssssssssssssss", $image, $description, $sub_img_1, $sub_img_2, $sub_img_3, $sub_img_4, $sub_img_5, $sub_img_6, $sub_img_7, $sub_img_8, $sub_img_9, $sub_img_10, $sub_img_11, $sub_img_12, $sub_img_13, $sub_img_14, $sub_img_15, $sub_img_16, $sub_img_17, $sub_img_18, $sub_img_19, $sub_img_20, $sub_img_21, $sub_img_22, $sub_img_23, $sub_img_24, $sub_img_25);
