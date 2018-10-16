@@ -23,7 +23,7 @@ function adaptation(){
 function load_all(){
   $.ajax({
     type: "POST",
-    url: "ru/actions.php",
+    url: "photosession/actions.php",
     data: {
       action: 'load_all'
     },
