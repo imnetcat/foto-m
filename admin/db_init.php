@@ -1,7 +1,7 @@
 <?
 
 $query ="CREATE TABLE  IF NOT EXISTS photosession (
-  id INT(50) NOT NULL,
+  id INT(25) NOT NULL,
   image VARCHAR(60) NOT NULL,
   description VARCHAR(60) NOT NULL
 )";
