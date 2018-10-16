@@ -294,30 +294,5 @@ class Item {
     this.subImg23 = array[25];
     this.subImg24 = array[26];
     this.subImg25 = array[27];
-    this.subDes1 = array[28];
-    this.subDes2 = array[29];
-    this.subDes3 = array[30];
-    this.subDes4 = array[31];
-    this.subDes5 = array[32];
-    this.subDes6 = array[33];
-    this.subDes7 = array[34];
-    this.subDes8 = array[35];
-    this.subDes9 = array[36];
-    this.subDes10 = array[37];
-    this.subDes11 = array[38];
-    this.subDes12 = array[39];
-    this.subDes13 = array[40];
-    this.subDes14 = array[41];
-    this.subDes15 = array[42];
-    this.subDes16 = array[43];
-    this.subDes17 = array[44];
-    this.subDes18 = array[45];
-    this.subDes19 = array[46];
-    this.subDes20 = array[47];
-    this.subDes21 = array[48];
-    this.subDes22 = array[49];
-    this.subDes23 = array[50];
-    this.subDes24 = array[51];
-    this.subDes25 = array[52];
   }
 }
