@@ -1,6 +1,13 @@
 /* line 1, menu.scss */
 #menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border-bottom: 2px solid white;
   background: black;
   position: relative;
