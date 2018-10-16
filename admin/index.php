@@ -78,9 +78,7 @@
               allItems[n-1] = new Item(php_array_to_js_array(raw_data[n]));
             }
             for( n = 0; n < allItems.length; n++){
-	      var raw_cost = allItems[n].cost.split(".");
-	      var cost = Number(raw_cost[0] + "" + raw_cost[1] + "" + raw_cost[2] + "" + raw_cost[3] + "" + raw_cost[4] + "" + raw_cost[5]);
-              var div = $("<div class='item'></div>");
+	      var div = $("<div class='item'></div>");
 	      var a = $("<div class='a' style='position:absolute; width:600px;'></div>");
 	      a.append($("<span>ID: </span><span class='id'>"+allItems[n].id+"</span><br>"+
 	      "<span>Файл: </span><span class='image'>"+allItems[n].image.split("/")[1]+"</span><br>"+
