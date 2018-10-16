@@ -4,14 +4,8 @@ function build_z(id, src, description){
 function build(id, src, description){
   return '<div class="item"><img id="'+id+'" class="img" src="'+src+'"><div class="description">'+description+'</div></div>';
 }
-function build_logo(src){
-  return '<div class="shadowItem"><img src="'+src+'"></div>';
-}
 function build_shadow(){
   return '<div class="shadowItem"></div>';
-}
-function build_win(id, src, description){
-  return '<div class="item"><div class="win"><div class="mask-1"></div><div class="mask-2"></div></div><img id="'+id+'" class="img" src="'+src+'"><div class="description">'+description+'</div></div>';
 }
 function adaptation_1(){
   var client_w = $("body").width();
@@ -66,28 +60,11 @@ function setFirst(allItems){
   var item;
   var row = $('#row');
   var html;
-  var i = -1;
   for( n = 0; n <  allItems.length; n++){
-    if(n%3 === 0){ i = 0 }else{ i = 1 }
-    if(n%3 === 1){ i = 0 }else{ if(n%3 === 0){ i = 0 }else{ i = 1 } }
-    if(n == 1){ i = 1 }
-    if(n%6 === 0){ i = 1 }
-    if(n === 0){ i = 0 }
-    if(i === 0){
-      item = build_win(allItems[n].id, allItems[n].image, allItems[n].description);
-    }else{
-      item = build(allItems[n].id, allItems[n].image, allItems[n].description);
-    }
+    item = build(allItems[n].id, allItems[n].image, allItems[n].description);
     html = row.html();
     row.html(html + item);
   }
-  if($("body").width() < 1237 || $("body").height() < 757){
-    $("#row").prepend(build_logo("logo-mobile.jpg"));
-  }
-  if(($(".item").length + $(".shadowItem").length) % 2 == 1){$("#row").append(build_shadow)}
-  $('.win').on('click touch', (e) => {
-    set(allItems);
-  });
   $('.img').on('click touch', (event) => {
     set(allItems);
   });
@@ -102,24 +79,15 @@ function setFirst(allItems){
     } 
     var item;
     var row = $('#row');
+    console.log(row);
     row.html("");
     var html;
     for( n = 0; n <  allItems.length; n++){
-      if(n%3 === 0){
-        item = build_win(allItems[n].id, allItems[n].image, allItems[n].description);
-      }else{
-        item = build(allItems[n].id, allItems[n].image, allItems[n].description);
-      }
+      item = build(allItems[n].id, allItems[n].image, allItems[n].description);
       html = row.html();
       row.html(html + item);
     }
-    if($("body").width() < 1237 || $("body").height() < 757){
-      $("#row").prepend(build_logo("logo-mobile.jpg"));
-    }
     if(($(".item").length + $(".shadowItem").length) % 2 == 1){$("#row").append(build_shadow)}
-    $('.win').on('click touch', (e) => {
-      set(allItems);
-    });
     $('.img').on('click touch', (event) => {
       set(allItems);
     });
@@ -295,47 +263,6 @@ function set(allItems){
       }
     }
   }
-   h = 0/0; 
-  if($(".item").length % 2 == 1){$("#row").append(build_shadow)}
-  $(".img").click( function() {
-    var Othis = $(this);
-    var current;
-    var all = Othis.parent().parent().children(".item").length;
-    for(n = 0; n < all; n++){
-      if(Othis.parent().parent().children(".item:nth-child("+n+")").children(1).attr("src") == Othis.attr('src')){
-        current = n;
-      }
-    }
-    $('#fullImg > div > img').attr("src", "ru/full/"+Othis.attr('src').split('/')[2]);
-    $('#fullImg').css({ "visibility": "visible"});
-    $(".left").click( () => {
-      if(current==1){ current = all }else{ current-- }
-      $('#fullImg > div > img').attr("src", "");
-      $('#fullImg > div > img').attr("src", "ru/full/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
-    })
-    $(".right").click( () => {
-      if(current==all){ current = 1 }else{ current++ }
-      $('#fullImg > div > img').attr("src", "");
-      $('#fullImg > div > img').attr("src", "ru/full/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
-    });
-    $("#fullImg div:nth-child(1)").on( "swipeleft", function(){ 
-      if(current==all){ current = 1 }else{ current++ }
-      $('#fullImg > div > img').attr("src", "");
-      $('#fullImg > div > img').attr("src", "ru/full/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
-    });
-    $("#fullImg div:nth-child(1)").on( "swiperight", function(){
-      if(current==0){ current = all }else{ current-- }
-      $('#fullImg > div > img').attr("src", "");
-      $('#fullImg > div > img').attr("src", "ru/full/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
-    });
-    $('#fullImg .fil-close-btn').click( () => {
-      $('#fullImg').css('visibility', 'hidden');
-      $('#fullImg > div > img').attr("src", "none");
-      $(".left").off("click");
-      $(".right").off("click");
-      $('#fullImg .fil-close-btn').off("click");
-    });
-  });
 }
 class Item {
   constructor(array) {
