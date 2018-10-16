@@ -1,35 +1,19 @@
 <?php
 require_once "functions.php";
-require_once "db_init.php";
 require_once "db.php";
+require_once "db_init.php";
 
 
 switch ($_POST['action']){
-  case 'add_in_shop':
+  case 'add_in_photosession':
     $image = $_POST['image'];
-    $type = $_POST['type'];
-    $stone = $_POST['stone'];
-    $technology = $_POST['technology'];
-    $cost = $_POST['cost'];
-    $filter_5 = $_POST['filter_5'];
+    $derectory = $_POST['derectory'];
     $description = $_POST['description'];
-    echo add_in_shop($database, $image, $type, $stone, $technology, $cost, $filter_5, $description);
+    echo add_in_shop($database, $derectory, $image, $description);
   break;
-  case 'add_in_archive':
-    $image = $_POST['image'];
-    $type = $_POST['type'];
-    $stone = $_POST['stone'];
-    $technology = $_POST['technology'];
-    $cost = $_POST['cost'];
-    $filter_5 = $_POST['filter_5'];
-    $description = $_POST['description'];
-    echo add_in_archive($database, $image, $type, $stone, $technology, $cost, $filter_5, $description);
-  break;
-  case 'get_shop':
-    echo get_shop($database);
-  break;
-  case 'get_archive':
-    echo get_archive($database);
+  case 'get_photosession':
+    $derectory = $_POST['derectory'];
+    echo get_shop($database, $derectory);
   break;
   case 'delete':
     $id = $_POST['id'];
@@ -40,13 +24,8 @@ switch ($_POST['action']){
     $id = $_POST['id'];
     $derectory = $_POST['derectory'];
     $image = $_POST['image'];
-    $type = $_POST['type'];
-    $stone = $_POST['stone'];
-    $technology = $_POST['technology'];
-    $cost = $_POST['cost'];
-    $filter_5 = $_POST['filter_5'];
     $description = $_POST['description'];
-    echo change($database, $id, $derectory, $image, $type, $stone, $technology, $cost, $filter_5, $description);
+    echo change($database, $id, $derectory, $image, $description);
   break;
 };
 ?>
