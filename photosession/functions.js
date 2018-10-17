@@ -121,7 +121,7 @@ function continueLoading(th){
     continueLoading(event.target); 
   });
   $(item).find("img").on('error', () => {
-    console.log($("img[src='"+$(event.target)[0].src.split("photosession/")[1]+"']")[0].parent());
+    console.log($("img[src='"+$(event.target)[0].src.split("photosession/")[1]+"']").parent());
     $("img[src='"+$(event.target)[0].src.split("photosession/")[1]+"']").parent().remove();
     
   });
