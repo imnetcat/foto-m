@@ -89,6 +89,8 @@ function startLoading(allItems){
 }
 function continueLoading(th){
   alert("continue!");
+  th.onload = "";
+  th.onerror = "";
   var imgName = "";
   var c = th.src.split("/")[6].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
