@@ -86,7 +86,6 @@ function startLoading(allItems){
   var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+n+".jpg";
   item = build_z(imgURL);
   $(item).find("img").on('load', () => {
-    alert("continue!");
     continueLoading(event.target); 
   });
   html = row.html();
@@ -120,7 +119,6 @@ function continueLoading(th){
   var imgURL = "items/sets/"+imgName+".jpg";
   item = build_z(imgURL);
   $(item).find("img").on('load', () => {
-    alert("continue!!!!!!!!!");
     continueLoading(event.target); 
   });
   $(item).find("img").on('error', () => {
@@ -131,7 +129,7 @@ function continueLoading(th){
   row.html(html + item);
 }
 function stopLoading(th){
-  $(th)[0].remove();
+  $(th).remove();
 }
 class Item {
   constructor(array) {
