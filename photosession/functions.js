@@ -97,7 +97,7 @@ function startLoading(allItems){
 function continueLoading(th){
   var imgName = "";
   console.log($(event.target));
-  var c = $(event.target).src.split("/")[6].split(".")[0].split("");
+  var c = $(event.target)[0].src.split("/")[6].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
     if(c[n] == "-"){
       imgName += c[n];
