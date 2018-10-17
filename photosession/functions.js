@@ -121,8 +121,8 @@ function continueLoading(th){
     continueLoading(event.target); 
   });
   $(item).find("img").on('error', () => {
-    console.log($("img[src='"+$(event.target)[0].src.split("photosession/")[1]+"']"));
-    $(".item").remove("img[src='"+$(event.target)[0].src.split("photosession/")[1]+"']"); 
+    console.log($("img[src='"+$(event.target)[0].src.split("photosession/")[1]+"']")[0]);
+    $("img[src='"+$(event.target)[0].src.split("photosession/")[1]+"']")[0].remove();
     
   });
   var row = $('#row');
