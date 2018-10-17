@@ -120,12 +120,10 @@ function continueLoading(th){
   $(item).find("img").on('load', () => {
     continueLoading(event.target); 
   });
-  $(item).find("img").on('error', () => {
-    console.log($(event.target));
-    console.log($(event.target)[0]);
-    $(event.target).remove(); 
-    $(event.target)[0].remove(); 
-    event.target.remove(); 
+  $(item).find("img").on('error', (this) => {
+    console.log($(this));
+    $(this).remove(); 
+    
   });
   var row = $('#row');
   html = row.html();
