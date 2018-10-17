@@ -123,7 +123,9 @@ function continueLoading(th){
   $(item).find("img").on('error', () => {
     console.log($(event.target));
     console.log($(event.target)[0]);
+    $(event.target).remove(); 
     $(event.target)[0].remove(); 
+    event.target.remove(); 
   });
   var row = $('#row');
   html = row.html();
