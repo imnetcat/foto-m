@@ -20,6 +20,7 @@ function adaptation(){
     var client_w = screen.width;
   }
 }
+
 function load_all(){
   $.ajax({
     type: "POST",
