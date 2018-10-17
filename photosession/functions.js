@@ -93,6 +93,7 @@ function continueLoading(th){
   console.log(th.src);
   var imgURL = "items/sets/"+th.src.split("/")[5].split(".")[0]+"-"+n+".jpg"
   item = build_z(imgURL);
+  var row = $('#row');
   html = row.html();
   row.html(html + item);
 }
