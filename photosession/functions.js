@@ -30,11 +30,9 @@ function load_all(){
     success: function(data){
       var raw_data = data.split('array');
       var allItems = new Array();
-      console.log(data);
       for( n = 1; n < raw_data.length; n++){
         allItems[n-1] = new Item(php_array_to_js_array(raw_data[n]));
       }
-      console.log(allItems);
       setFirst(allItems);
     }
   });
@@ -90,7 +88,6 @@ function startLoading(allItems){
   row.html(html + item);
 }
 function continueLoading(th){
-  console.log(th.src);
   var imgName = "";
   var c = th.src.split("/")[6].split(".")[0].split("");
   for(n = 0; n <= c.length; c++){
@@ -101,6 +98,7 @@ function continueLoading(th){
     }else{
       imgName += c[n];
     }
+    console.log(imgName);
   }
   var imgURL = "items/sets/"+imgName+".jpg"
   console.log(imgURL);
