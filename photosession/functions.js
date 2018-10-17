@@ -90,6 +90,7 @@ function startLoading(allItems){
 function continueLoading(th){
   var imgName = "";
   var c = th.src.split("/")[6].split(".")[0].split("");
+  console.log(c);
   for(n = 0; n <= c.length; c++){
     if(c[n] == "-"){
       imgName += c[n];
@@ -98,7 +99,6 @@ function continueLoading(th){
     }else{
       imgName += c[n];
     }
-    console.log(imgName);
   }
   var imgURL = "items/sets/"+imgName+".jpg"
   console.log(imgURL);
