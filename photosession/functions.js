@@ -93,7 +93,19 @@ function continueLoading(th){
   for(n = 0; n <= c.length; n++){
     if(c[n] == "-"){
       imgName += c[n];
-      imgName += c[n+1]+c[n+2]+c[n+3]+c[n+4]+1;
+      if(c[n+2]){
+        if(c[n+3]){
+          if(c[n+4]){
+            imgName += c[n+1]+c[n+2]+c[n+3]+c[n+4]+1;
+          }else{
+            imgName += c[n+1]+c[n+2]+c[n+3]+1;
+          }
+        }else{
+          imgName += c[n+1]+c[n+2]+1;
+        }
+      }else{
+        imgName += c[n+1]+1;
+      }
       n = c.length;
     }else{
       imgName += c[n];
