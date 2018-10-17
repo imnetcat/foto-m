@@ -1,5 +1,5 @@
 function build_z(src){
-  return '<div class="item"><img class="img" onload="continueLoading(this); this.onerror = ''; this.onload = '';" onerror="stopLoading(this); this.onerror = ''; this.onload = '';" style="cursor: -webkit-zoom-in; cursor:-moz-zoom-in; cursor: zoom-in;" src="'+src+'"></div>';
+  return '<div class="item"><img class="img" onload="continueLoading(this); this.onerror = '+"''"+'; this.onload = '+"''"+';" onerror="stopLoading(this); this.onerror = '+"''"+'; this.onload = '+"''"+';" style="cursor: -webkit-zoom-in; cursor:-moz-zoom-in; cursor: zoom-in;" src="'+src+'"></div>';
 }
 function build(id, src, description){
   return '<div class="item"><img id="'+id+'" class="img" src="'+src+'"><div class="description">'+description+'</div></div>';
