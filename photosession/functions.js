@@ -121,7 +121,7 @@ function continueLoading(th){
     continueLoading(event.target); 
   });
   $(item).find("img").on('error', () => {
-    console.log("img[src='"+$(event.target).src+"']");
+    console.log("img[src='"+$(event.target)[0].src+"']");
     $(".item").remove("img[src='"+$(event.target)[0].src+"']"); 
     
   });
