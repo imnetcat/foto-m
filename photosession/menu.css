@@ -14,7 +14,7 @@
   z-index: 999;
   top: 0;
   left: 0;
-  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.1); }
+  //box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.1); }
   /* line 9, menu.scss */
   #menu ul {
     list-style: none;
