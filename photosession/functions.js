@@ -108,6 +108,7 @@ function set(allItems){
     }else{
       var eventSrc = $(event.target).parent().find("img")[0].src;
     }
+    console.log(eventSrc);
     item = build_z(eventSrc.split("/")[1]+"-"+n);
     html = row.html();
     row.html(html + item);
