@@ -87,10 +87,10 @@ function startLoading(allItems){
   $(item).fing("img").on('load', () => {
     alert("continue!");
     continueLoading(this); 
-  }
+  });
   $(item).fing("img").on('error', () => {
     stopLoading(this); 
-  }
+  });
   html = row.html();
   row.html(html + item);
 }
@@ -123,10 +123,10 @@ function continueLoading(th){
   $(item).fing("img").on('load', () => {
     alert("continue!!!!!!!!!");
     continueLoading(this); 
-  }
+  });
   $(item).fing("img").on('error', () => {
     stopLoading(this); 
-  }
+  });
   var row = $('#row');
   html = row.html();
   row.html(html + item);
