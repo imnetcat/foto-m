@@ -88,7 +88,6 @@ function startLoading(allItems){
   row.html(html + item);
 }
 function continueLoading(th){
-  alert("continue!");
   th.onload = "";
   th.onerror = "";
   var imgName = "";
