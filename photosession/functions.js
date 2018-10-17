@@ -68,32 +68,8 @@ function setFirst(allItems){
     row.html(html + item);
   }
   $('.img').on('click touch', (event) => {
-    set(allItems);
+    startLoading(allItems);
   });
-  $('#back, #logo').on('click touch', () => {
-    $("html, body").animate({
-        scrollTop: $("#row").offset().top
-    }, 1000);
-    if($('body').width() < screen.width){
-      var client_w = $('body').width();
-    }else{
-      var client_w = screen.width;
-    } 
-    var item;
-    var row = $('#row');
-    console.log(row);
-    row.html("");
-    var html;
-    for( n = 0; n <  allItems.length; n++){
-      item = build(allItems[n].id, allItems[n].image, allItems[n].description);
-      html = row.html();
-      row.html(html + item);
-    }
-    if(($(".item").length + $(".shadowItem").length) % 2 == 1){$("#row").append(build_shadow)}
-    $('.img').on('click touch', (event) => {
-      startLoading(allItems);
-    });
-  });		   
 }
 function startLoading(allItems){
   $("html, body").animate({
