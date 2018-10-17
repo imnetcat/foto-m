@@ -88,9 +88,6 @@ function startLoading(allItems){
     alert("continue!");
     continueLoading(event.target); 
   });
-  $(item).find("img").on('error', () => {
-    stopLoading(event.target); 
-  });
   html = row.html();
   row.html(html + item);
 }
@@ -133,7 +130,7 @@ function continueLoading(th){
   row.html(html + item);
 }
 function stopLoading(th){
-  th.remove();
+  $(th)[0].remove();
 }
 class Item {
   constructor(array) {
