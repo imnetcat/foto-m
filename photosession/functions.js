@@ -1,5 +1,5 @@
 function build_z(src){
-  return '<div class="item"><img class="img" onload="continueLoading(this)" onerror="stopLoading(this)" style="cursor: -webkit-zoom-in; cursor:-moz-zoom-in; cursor: zoom-in;" src="'+src+'"></div>';
+  return '<div class="item"><img class="img" onload="continueLoading(this); this.onerror = ''; this.onload = '';" onerror="stopLoading(this); this.onerror = ''; this.onload = '';" style="cursor: -webkit-zoom-in; cursor:-moz-zoom-in; cursor: zoom-in;" src="'+src+'"></div>';
 }
 function build(id, src, description){
   return '<div class="item"><img id="'+id+'" class="img" src="'+src+'"><div class="description">'+description+'</div></div>';
@@ -88,8 +88,6 @@ function startLoading(allItems){
   row.html(html + item);
 }
 function continueLoading(th){
-  this.onload = "";
-  this.onerror = "";
   var imgName = "";
   var c = th.src.split("/")[6].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
