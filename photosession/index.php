@@ -10,11 +10,11 @@
 <body>
   <nav role='navigation' id="menu">
     <ul>
-      <li><a href="/ru/">Главная</a></li>
-      <li><a href="#" style="cursor: default;">Про</aЮ</li>
-      <li><a href="#" style="background-image: none; cursor: default;">Магазин</a></li>
-      <li><a href="/ru/archive/">Архив</a></li>
-      <li><a href="/ru/contacts/">Контакты</a></li>
+      <li><a href="">Пейзаж</a></li>
+      <li><a href="">Фотосессия</li>
+      <li><a href="/photosession/" style="background-image: none; cursor: default;">Репортаж</a></li>
+      <li><a href="">Ретуш</a></li>
+      <li><a href="">Другое</a></li>
     </ul>
   </nav>
   
