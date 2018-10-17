@@ -86,10 +86,10 @@ function startLoading(allItems){
   item = build_z(imgURL);
   $(item).find("img").on('load', () => {
     alert("continue!");
-    continueLoading(this); 
+    continueLoading($(this)); 
   });
   $(item).find("img").on('error', () => {
-    stopLoading(this); 
+    stopLoading($(this)); 
   });
   html = row.html();
   row.html(html + item);
@@ -123,10 +123,10 @@ function continueLoading(th){
   item = build_z(imgURL);
   $(item).find("img").on('load', () => {
     alert("continue!!!!!!!!!");
-    continueLoading(this); 
+    continueLoading($(this)); 
   });
   $(item).find("img").on('error', () => {
-    stopLoading(this); 
+    stopLoading($(this)); 
   });
   var row = $('#row');
   html = row.html();
