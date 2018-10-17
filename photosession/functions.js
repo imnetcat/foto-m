@@ -96,7 +96,7 @@ function startLoading(allItems){
 }
 function continueLoading(th){
   var imgName = "";
-  var c = th.src.split("/")[6].split(".")[0].split("");
+  var c = $(th).src.split("/")[6].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
     if(c[n] == "-"){
       imgName += c[n];
