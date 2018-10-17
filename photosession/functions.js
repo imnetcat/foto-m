@@ -93,7 +93,6 @@ function startLoading(allItems){
 }
 function continueLoading(th){
   var imgName = "";
-  console.log($(event.target));
   var c = $(event.target)[0].src.split("/")[6].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
     if(c[n] == "-"){
@@ -122,14 +121,11 @@ function continueLoading(th){
     continueLoading(event.target); 
   });
   $(item).find("img").on('error', () => {
-    stopLoading(event.target); 
+    $(event.target)[0].remove(); 
   });
   var row = $('#row');
   html = row.html();
   row.html(html + item);
-}
-function stopLoading(th){
-  $(th).remove();
 }
 class Item {
   constructor(array) {
