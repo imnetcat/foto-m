@@ -88,8 +88,8 @@ function startLoading(allItems){
   row.html(html + item);
 }
 function continueLoading(th){
-  th.onload = "";
-  th.onerror = "";
+  this.onload = "";
+  this.onerror = "";
   var imgName = "";
   var c = th.src.split("/")[6].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
