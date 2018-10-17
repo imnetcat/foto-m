@@ -91,7 +91,18 @@ function startLoading(allItems){
 }
 function continueLoading(th){
   console.log(th.src);
-  var imgURL = "items/sets/"+th.src.split("/")[5].split(".")[0]+"-"+n+".jpg"
+  var imgName = "";
+  var c = th.src.split("/")[6].split(".")[0].split("");
+  for(n = 0; n <= c.length; c++){
+    if(c[n] == "-"){
+      imgName += c[n];
+      imgName += c[n+1]+c[n+2]+c[n+3]+c[n+4]+1;
+      n = c.length;
+    }else{
+      imgName += c[n];
+    }
+  }
+  var imgURL = "items/sets/"+imgName+".jpg"
   console.log(imgURL);
   item = build_z(imgURL);
   var row = $('#row');
