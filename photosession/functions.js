@@ -84,11 +84,11 @@ function startLoading(allItems){
   } 
   var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+n+".jpg";
   item = build_z(imgURL);
-  $(item).fing("img").on('load', () => {
+  $(item).find("img").on('load', () => {
     alert("continue!");
     continueLoading(this); 
   });
-  $(item).fing("img").on('error', () => {
+  $(item).find("img").on('error', () => {
     stopLoading(this); 
   });
   html = row.html();
@@ -120,11 +120,11 @@ function continueLoading(th){
   }
   var imgURL = "items/sets/"+imgName+".jpg";
   item = build_z(imgURL);
-  $(item).fing("img").on('load', () => {
+  $(item).find("img").on('load', () => {
     alert("continue!!!!!!!!!");
     continueLoading(this); 
   });
-  $(item).fing("img").on('error', () => {
+  $(item).find("img").on('error', () => {
     stopLoading(this); 
   });
   var row = $('#row');
