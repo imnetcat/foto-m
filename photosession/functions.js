@@ -1,5 +1,5 @@
 function build_z(src){
-  return '<div class="item"><img class="img" style="cursor: -webkit-zoom-in; cursor:-moz-zoom-in; cursor: zoom-in;" src="'+src+'"></div>';
+  return '<div class="item"><img class="img" onload="continueLoading(this)" onerror="stopLoading(this)" style="cursor: -webkit-zoom-in; cursor:-moz-zoom-in; cursor: zoom-in;" src="'+src+'"></div>';
 }
 function build(id, src, description){
   return '<div class="item"><img id="'+id+'" class="img" src="'+src+'"><div class="description">'+description+'</div></div>';
@@ -91,11 +91,11 @@ function setFirst(allItems){
     }
     if(($(".item").length + $(".shadowItem").length) % 2 == 1){$("#row").append(build_shadow)}
     $('.img').on('click touch', (event) => {
-      set(allItems);
+      startLoading(allItems);
     });
   });		   
 }
-function set(allItems){
+function startLoading(allItems){
   $("html, body").animate({
     scrollTop: $("#row").offset().top
   }, 1000);
@@ -103,27 +103,25 @@ function set(allItems){
   var row = $('#row');
   row.html("");
   var n = 1;
-  while(true){
-    if($(event.target).parent().attr("class") != "item"){
-      var eventSrc = $(event.target).parent().parent().find("img")[0].src;
-    }else{
-      var eventSrc = $(event.target).parent().find("img")[0].src;
-    }
-    
-    var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+n+".jpg";
-    var tester=new Image();
-    tester.onload=function(){
-      item = build_z(imgURL);
-      html = row.html();
-      row.html(html + item);
-    };
-    tester.onerror=function(){
-      break;
-    };
-    tester.src=imgURL;
-    
-    n++;
-  }
+  if($(event.target).parent().attr("class") != "item"){
+    var eventSrc = $(event.target).parent().parent().find("img")[0].src;
+  }else{
+    var eventSrc = $(event.target).parent().find("img")[0].src;
+  } 
+  var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+n+".jpg";
+  item = build_z(imgURL);
+  html = row.html();
+  row.html(html + item);
+}
+function continueLoading(th){
+  console.log(th.src);
+  var imgURL = "items/sets/"+th.src.split("/")[5].split(".")[0]+"-"+n+".jpg"
+  item = build_z(imgURL);
+  html = row.html();
+  row.html(html + item);
+}
+function stopLoading(th){
+  th.remove();
 }
 class Item {
   constructor(array) {
