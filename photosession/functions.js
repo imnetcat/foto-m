@@ -102,14 +102,14 @@ function set(allItems){
   var item;
   var row = $('#row');
   row.html("");
-  for( n = 0; n < 25; n++){
+  for( n = 1; n <= 25; n++){
     if($(event.target).parent().attr("class") != "item"){
       var eventSrc = $(event.target).parent().parent().find("img")[0].src;
     }else{
       var eventSrc = $(event.target).parent().find("img")[0].src;
     }
     console.log(eventSrc);
-    item = build_z("items/sets/"+eventSrc.split("/")[5]+"-"+n);
+    item = build_z("items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+n+".jpg");
     html = row.html();
     row.html(html + item);
   }
