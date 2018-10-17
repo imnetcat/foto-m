@@ -102,16 +102,27 @@ function set(allItems){
   var item;
   var row = $('#row');
   row.html("");
-  for( n = 1; n <= 25; n++){
+  var n = 1;
+  while(true){
     if($(event.target).parent().attr("class") != "item"){
       var eventSrc = $(event.target).parent().parent().find("img")[0].src;
     }else{
       var eventSrc = $(event.target).parent().find("img")[0].src;
     }
-    console.log(eventSrc);
-    item = build_z("items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+n+".jpg");
-    html = row.html();
-    row.html(html + item);
+    
+    var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+n+".jpg";
+    var tester=new Image();
+    tester.onload=function(){
+      item = build_z(imgURL);
+      html = row.html();
+      row.html(html + item);
+    };
+    tester.onerror=function(){
+      break;
+    };
+    tester.src=imgURL;
+    
+    n++;
   }
 }
 class Item {
