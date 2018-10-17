@@ -120,7 +120,7 @@ function continueLoading(th){
   $(item).find("img").on('load', () => {
     continueLoading(event.target); 
   });
-  $(item).find("img").on('error', (this) => {
+  $(item).find("img").on('error', () => {
     console.log($(this));
     $(this).remove(); 
     
