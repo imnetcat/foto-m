@@ -90,8 +90,7 @@ function startLoading(allItems){
 function continueLoading(th){
   var imgName = "";
   var c = th.src.split("/")[6].split(".")[0].split("");
-  console.log(c);
-  for(n = 0; n <= c.length; c++){
+  for(n = 0; n <= c.length; n++){
     if(c[n] == "-"){
       imgName += c[n];
       imgName += c[n+1]+c[n+2]+c[n+3]+c[n+4]+1;
