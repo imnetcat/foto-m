@@ -122,7 +122,7 @@ function continueLoading(th){
   });
   $(item).find("img").on('error', () => {
     console.log("img[src='"+$(event.target).src+"']");
-    $(".item").remove("img[src='"+$(event.target).src+"']"); 
+    $(".item").remove("img[src='"+$(event.target)[0].src+"']"); 
     
   });
   var row = $('#row');
