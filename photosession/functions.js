@@ -92,6 +92,7 @@ function startLoading(allItems){
 function continueLoading(th){
   console.log(th.src);
   var imgURL = "items/sets/"+th.src.split("/")[5].split(".")[0]+"-"+n+".jpg"
+  console.log(imgURL);
   item = build_z(imgURL);
   var row = $('#row');
   html = row.html();
