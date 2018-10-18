@@ -104,12 +104,11 @@ function Load(imgURL, s){
   var row = $('#row');
   html = row.html();
   row.html(html + item);
-  console.log(row[0]);
-  alert(imgURL);
+  console.log(row);
   
-  var obj = new Image;
-  obj.onload = Load(imgURL, s+1);
-  obj.src = imgURL;
+ // var obj = new Image;
+ // obj.onload = Load(imgURL, s+1);
+ // obj.src = imgURL;
 }
 class Item {
   constructor(array) {
