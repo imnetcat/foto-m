@@ -95,9 +95,7 @@ function set(max){
   } 
   var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-";
   for(n = 1; n <= max; n++){
-    imgURL += n+".jpg";
-    console.log(imgURL);
-    item = build_z(imgURL);
+    item = build_z(imgURL + n +".jpg");
     row.html(row.html() + item);
   }
 }
