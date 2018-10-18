@@ -83,6 +83,13 @@ function cheaker(allItems){
     var eventSrc = $(event.target).parent().find("img")[0].src;
   } 
   var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+"1"+".jpg";
+  
+  item = build_z(imgURL);
+  var row = $('#row');
+  html = row.html();
+  row.html(html + item);
+  console.log(imgURL);
+  
   var obj = new Image;
   obj.onload = Load(imgURL, 1);
   obj.src = imgURL;
@@ -111,6 +118,75 @@ function Load(imgURL, s){
   obj.src = imgURL;
 }
 function Load1(imgURL, s){
+  var imgName = "";
+  var c = imgURL.split("/")[2].split(".")[0].split("");
+  for(n = 0; n <= c.length; n++){
+    if(c[n] == "-"){
+      imgName += c[n];
+      imgName += Number(s)+1;
+      n = c.length;
+    }else{
+      imgName += c[n];
+    }
+  }
+  var imgURL = "items/sets/"+imgName+".jpg";
+  item = build_z(imgURL);
+  var row = $('#row');
+  html = row.html();
+  row.html(html + item);
+  console.log(imgURL);
+  
+  var obj = new Image;
+  obj.onload = Load2(imgURL, s+1);
+  obj.src = imgURL;
+}
+function Load2(imgURL, s){
+  var imgName = "";
+  var c = imgURL.split("/")[2].split(".")[0].split("");
+  for(n = 0; n <= c.length; n++){
+    if(c[n] == "-"){
+      imgName += c[n];
+      imgName += Number(s)+1;
+      n = c.length;
+    }else{
+      imgName += c[n];
+    }
+  }
+  var imgURL = "items/sets/"+imgName+".jpg";
+  item = build_z(imgURL);
+  var row = $('#row');
+  html = row.html();
+  row.html(html + item);
+  console.log(imgURL);
+  
+  var obj = new Image;
+  obj.onload = Load3(imgURL, s+1);
+  obj.src = imgURL;
+}
+function Load3(imgURL, s){
+  var imgName = "";
+  var c = imgURL.split("/")[2].split(".")[0].split("");
+  for(n = 0; n <= c.length; n++){
+    if(c[n] == "-"){
+      imgName += c[n];
+      imgName += Number(s)+1;
+      n = c.length;
+    }else{
+      imgName += c[n];
+    }
+  }
+  var imgURL = "items/sets/"+imgName+".jpg";
+  item = build_z(imgURL);
+  var row = $('#row');
+  html = row.html();
+  row.html(html + item);
+  console.log(imgURL);
+  
+  var obj = new Image;
+  obj.onload = Load4(imgURL, s+1);
+  obj.src = imgURL;
+}
+function Load4(imgURL, s){
   var imgName = "";
   var c = imgURL.split("/")[2].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
