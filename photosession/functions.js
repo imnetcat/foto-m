@@ -89,6 +89,7 @@ function cheaker(allItems){
   obj.src = imgURL;
 }
 function Load(imgURL, n){
+  alert(imgURL + "           " + n);
   var imgName = "";
   var c = imgURL.split("/")[2].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
