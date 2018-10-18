@@ -84,37 +84,41 @@ function cheaker(allItems){
   } 
   var obj = new Image;
   var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+"1"+".jpg";
-  obj.src = imgURL;
-  obj.onload = function(imgURL){
-    console.log(imgURL);
-    item = build_z(imgURL);
-    var row = $('#row');
-    html = row.html();
-    row.html(html + item);
+
+  console.log(imgURL);
+  item = build_z(imgURL);
+  var row = $('#row');
+  html = row.html();
+  row.html(html + item);
     
-    var imgName = "";
-    var c = imgURL.split("/")[2].split(".")[0].split("");
-    for(n = 0; n <= c.length; n++){
-      if(c[n] == "-"){
-        imgName += c[n];
-        imgName += 2;
-        n = c.length;
-      }else{
-        imgName += c[n];
-      }
+  var imgName = "";
+  var c = imgURL.split("/")[2].split(".")[0].split("");
+  for(n = 0; n <= c.length; n++){
+    if(c[n] == "-"){
+      imgName += c[n];
+      imgName += 2;
+      n = c.length;
+    }else{
+      imgName += c[n];
     }
-    var imgURL = "items/sets/"+imgName+".jpg";
-    check(imgURL, 3);
-  }(imgURL);
+  }
+  var imgURL = "items/sets/"+imgName+".jpg";
+  check(imgURL, 3);
 }
 function check(imgURL, s){
   var obj = new Image;
   obj.src = imgURL;
   obj.onerror = function(obj){
     console.log("stopping");
-    delete obj;
-  }(obj);
-  obj.onload = function(imgURL){
+    this.onload = "";
+    this.onerror = "";
+  }
+  obj.onload = cCheck(imgURL);
+}
+
+function cCheck(imgURL){
+    this.onload = "";
+    this.onerror = "";
     console.log(imgURL);
     item = build_z(imgURL);
     var row = $('#row');
@@ -135,8 +139,7 @@ function check(imgURL, s){
     var imgURL = "items/sets/"+imgName+".jpg";
     
     check(imgURL);
-  }(imgURL);
-}
+  }
 
 class Item {
   constructor(array) {
