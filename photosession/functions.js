@@ -115,18 +115,12 @@ function Load(imgURL, n){
   }
   var imgURL = "items/sets/"+imgName+".jpg";
   item = build_z(imgURL);
-  $(item).find("img").on('load', () => {
-    continueLoading(event.target); 
-  });
-  $(item).find("img").on('error', () => {
-    $("img[src='"+$(event.target)[0].src.split("photosession/")[1]+"']").parent().remove();
-    
-  });
   var row = $('#row');
   html = row.html();
   row.html(html + item);
+  
   var obj = new Image;
-  obj.onload = Load(imgURL, n);
+  obj.onload = Load(imgURL, n+1);
   obj.src = imgURL;
 }
 class Item {
