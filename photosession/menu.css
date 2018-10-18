@@ -10,7 +10,7 @@
   justify-content: center;
   position: fixed;
   z-index: 999;
-  height: max-content;
+  height: 80px;
   background: black;
   width: 100%;
   top: 0;
