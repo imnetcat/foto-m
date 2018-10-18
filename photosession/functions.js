@@ -91,8 +91,8 @@ function cheaker(allItems){
   console.log(imgURL);
   
   var obj = new Image;
-  obj.onload = Load(imgURL, 1);
   obj.src = imgURL;
+  obj.onload = Load(imgURL, 1);
 }
 function Load(imgURL, s){
   var imgName = "";
@@ -111,11 +111,10 @@ function Load(imgURL, s){
   var row = $('#row');
   html = row.html();
   row.html(html + item);
-  console.log(imgURL);
   
   var obj = new Image;
-  obj.onload = Load1(imgURL, s+1);
   obj.src = imgURL;
+  obj.onload = Load1(imgURL, s+1);
 }
 function Load1(imgURL, s){
   var imgName = "";
@@ -134,11 +133,10 @@ function Load1(imgURL, s){
   var row = $('#row');
   html = row.html();
   row.html(html + item);
-  console.log(imgURL);
   
   var obj = new Image;
-  obj.onload = Load2(imgURL, s+1);
   obj.src = imgURL;
+  obj.onload = Load2(imgURL, s+1);
 }
 function Load2(imgURL, s){
   var imgName = "";
@@ -160,8 +158,8 @@ function Load2(imgURL, s){
   console.log(imgURL);
   
   var obj = new Image;
-  obj.onload = Load3(imgURL, s+1);
   obj.src = imgURL;
+  obj.onload = Load3(imgURL, s+1);
 }
 function Load3(imgURL, s){
   var imgName = "";
@@ -183,8 +181,8 @@ function Load3(imgURL, s){
   console.log(imgURL);
   
   var obj = new Image;
-  obj.onload = Load4(imgURL, s+1);
   obj.src = imgURL;
+  obj.onload = Load4(imgURL, s+1);
 }
 function Load4(imgURL, s){
   var imgName = "";
