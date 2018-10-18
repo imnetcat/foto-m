@@ -67,10 +67,10 @@ function setFirst(allItems){
     row.html(html + item);
   }
   $('.img').on('click touch', (event) => {
-    startLoading(allItems);
+    cheaker(allItems);
   });
 }
-function startLoading(allItems){
+function cheaker(allItems){
   $("html, body").animate({
     scrollTop: $("#row").offset().top
   }, 1000);
@@ -84,14 +84,11 @@ function startLoading(allItems){
     var eventSrc = $(event.target).parent().find("img")[0].src;
   } 
   var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+n+".jpg";
-  item = build_z(imgURL);
-  $(item).find("img").on('load', () => {
-    continueLoading(event.target); 
-  });
-  html = row.html();
-  row.html(html + item);
+  var obj = new Image;
+  obj.onload = Load(imgURL, n);
+  obj.src = imgURL;
 }
-function continueLoading(th){
+function Load(imgURL, n){
   var imgName = "";
   var c = $(event.target)[0].src.split("/")[6].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
@@ -127,6 +124,9 @@ function continueLoading(th){
   var row = $('#row');
   html = row.html();
   row.html(html + item);
+  var obj = new Image;
+  obj.onload = Load(imgURL, n);
+  obj.src = imgURL;
 }
 class Item {
   constructor(array) {
