@@ -34,6 +34,7 @@ function load_all(){
       for( n = 1; n < raw_data.length; n++){
         allItems[n-1] = new Item(php_array_to_js_array(raw_data[n]));
       }
+      console.log(allItems);
       setFirst(allItems);
     }
   });
@@ -71,9 +72,7 @@ function setFirst(allItems){
     var flag = true;
     var i = 0;
     while(flag){
-      console.log(allItems[i].image.split("/")[1]);
       if($(event.target)[0].src.split("/")[5] == allItems[i].image.split("/")[1]){
-        console.log(allItems[i].count);
         set(allItems[i].count);
         flag = false;
       }
