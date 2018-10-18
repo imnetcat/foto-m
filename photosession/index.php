@@ -36,9 +36,11 @@
       <div class="f_circleG" id="frotateG_07"></div>
       <div class="f_circleG" id="frotateG_08"></div>
     </div>
-    <div class="fil-close-btn">
-      <div></div>
-      <div></div>
+    <div class="close-mask">
+      <div class="fil-close-btn">
+        <div></div>
+        <div></div>
+      </div>
     </div>
   </div>
   
