@@ -102,14 +102,18 @@ function cheaker(allItems){
       }else{
         imgName += c[n];
       }
-    }(imgURL);
+    }
     var imgURL = "items/sets/"+imgName+".jpg";
     check(imgURL, 3);
-  }
+  }(imgURL);
 }
 function check(imgURL, s){
   var obj = new Image;
   obj.src = imgURL;
+  obj.onerror = function(obj){
+    console.log("stopping");
+    delete obj;
+  }(obj);
   obj.onload = function(imgURL){
     console.log(imgURL);
     item = build_z(imgURL);
@@ -127,11 +131,11 @@ function check(imgURL, s){
       }else{
         imgName += c[n];
       }
-    }(imgURL);
+    }
     var imgURL = "items/sets/"+imgName+".jpg";
     
     check(imgURL);
-  }
+  }(imgURL);
 }
 
 class Item {
