@@ -67,7 +67,6 @@ function setFirst(allItems){
     row.html(html + item);
   }
   $('.img').on('click touch', (event) => {
-    console.log($(event.target)[0].src.split("/")[5]);
     var flag = true;
     var i = 0;
     while(flag){
