@@ -67,10 +67,21 @@ function setFirst(allItems){
     row.html(html + item);
   }
   $('.img').on('click touch', (event) => {
-    cheaker(allItems);
+    console.log($(event.target)[0].src);
+    var flag = true;
+    var i = 0;
+    while(flag){
+      console.log(allItems[i].image);
+      if($(event.target)[0].src == allItems[i].image){
+        console.log(allItems[i].count);
+        set(allItems[i].count);
+        flag = false;
+      }
+      i++;
+    }
   });
 }
-function cheaker(allItems){
+function set(max){
   $("html, body").animate({
     scrollTop: $("#row").offset().top
   }, 1000);
@@ -82,65 +93,18 @@ function cheaker(allItems){
   }else{
     var eventSrc = $(event.target).parent().find("img")[0].src;
   } 
-  var obj = new Image;
-  var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+"1"+".jpg";
-
-  console.log(imgURL);
-  item = build_z(imgURL);
-  var row = $('#row');
-  html = row.html();
-  row.html(html + item);
-    
-  var imgName = "";
-  var c = imgURL.split("/")[2].split(".")[0].split("");
-  for(n = 0; n <= c.length; n++){
-    if(c[n] == "-"){
-      imgName += c[n];
-      imgName += 2;
-      n = c.length;
-    }else{
-      imgName += c[n];
-    }
-  }
-  var imgURL = "items/sets/"+imgName+".jpg";
-  check(imgURL, 3);
-}
-function check(imgURL, s){
-  var obj = new Image;
-  obj.src = imgURL;
-  obj.onerror = function(obj){
-    console.log("stopping");
-    this.onload = "";
-    this.onerror = "";
-  }
-  obj.onload = cCheck(imgURL, s);
-}
-
-function cCheck(imgURL, s){
-    this.onload = "";
-    this.onerror = "";
-    if(s == NaN){ console.log("ret"); return; }
+  var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-";
+  for(n = 1; n <= max; n++){
+    imgURL += n+".jpg";
     console.log(imgURL);
     item = build_z(imgURL);
-    var row = $('#row');
-    html = row.html();
-    row.html(html + item);
-    
-    var imgName = "";
-    var c = imgURL.split("/")[2].split(".")[0].split("");
-    for(n = 0; n <= c.length; n++){
-      if(c[n] == "-"){
-        imgName += c[n];
-        imgName += s;
-        n = c.length;
-      }else{
-        imgName += c[n];
-      }
-    }
-    var imgURL = "items/sets/"+imgName+".jpg";
-    s++;
-    check(imgURL, s);
+    row.html(row.html() + item);
   }
+}
+
+
+
+
 
 class Item {
   constructor(array) {
