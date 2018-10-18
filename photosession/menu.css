@@ -8,7 +8,6 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  //border-bottom: 2px solid white;
   position: fixed;
   z-index: 999;
   height: max-content;
@@ -16,7 +15,6 @@
   width: 100%;
   top: 0;
   left: 0;
-  //box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.1); }
   /* line 9, menu.scss */
   #menu ul {
     list-style: none;
@@ -37,7 +35,7 @@
       #menu ul li a {
         display: block;
         color: white;
-        padding: 30px 20px;
+        padding: 25px 20px;
         font-size: .9em;
         letter-spacing: 1px;
         text-decoration: none;
