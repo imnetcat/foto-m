@@ -104,7 +104,7 @@ function Load(imgURL, s){
   var row = $('#row');
   html = row.html();
   row.html(html + item);
-  console.log(row);
+  console.log(row[0]);
   alert(imgURL);
   
   var obj = new Image;
