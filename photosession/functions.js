@@ -100,6 +100,41 @@ function set(max){
     row.html(row.html() + item);
   }
   if($(".item").length % 2 == 1){$("#row").append($(build_shadow()))}
+  $(".img").click( function() {
+    var Othis = $(this);
+    var current;
+    var all = Othis.parent().parent().children(".item").length;
+    for(n = 0; n < all; n++){
+      if(Othis.parent().parent().children(".item:nth-child("+n+")").children(1).attr("src") == Othis.attr('src')){
+        current = n;
+      }
+    }
+    $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.attr('src').split('/')[2]);
+    $('#fullImg').css({ "visibility": "visible"});
+    $(".left").click( () => {
+      if(current==1){ current = all }else{ current-- }
+      $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
+    })
+    $(".right").click( () => {
+      if(current==all){ current = 1 }else{ current++ }
+      $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
+    });
+    $("#fullImg div:nth-child(1)").on( "swipeleft", function(){ 
+      if(current==all){ current = 1 }else{ current++ }
+      $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
+    });
+    $("#fullImg div:nth-child(1)").on( "swiperight", function(){
+      if(current==0){ current = all }else{ current-- }
+      $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
+    });
+    $('#fullImg .fil-close-btn').click( () => {
+      $('#fullImg').css('visibility', 'hidden');
+      $('#fullImg > div > img').attr("src", "none");
+      $(".left").off("click");
+      $(".right").off("click");
+      $('#fullImg .fil-close-btn').off("click");
+    });
+  });
 }
 
 class Item {
