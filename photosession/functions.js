@@ -116,9 +116,10 @@ function check(imgURL, s){
   obj.onload = cCheck(imgURL);
 }
 
-function cCheck(imgURL){
+function cCheck(imgURL, s){
     this.onload = "";
     this.onerror = "";
+    if(s == NaN){ console.log("ret"); return; }
     console.log(imgURL);
     item = build_z(imgURL);
     var row = $('#row');
@@ -130,15 +131,15 @@ function cCheck(imgURL){
     for(n = 0; n <= c.length; n++){
       if(c[n] == "-"){
         imgName += c[n];
-        imgName += 3;
+        imgName += s;
         n = c.length;
       }else{
         imgName += c[n];
       }
     }
     var imgURL = "items/sets/"+imgName+".jpg";
-    
-    check(imgURL);
+    s++;
+    check(imgURL, s);
   }
 
 class Item {
