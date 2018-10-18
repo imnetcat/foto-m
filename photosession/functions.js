@@ -82,131 +82,58 @@ function cheaker(allItems){
   }else{
     var eventSrc = $(event.target).parent().find("img")[0].src;
   } 
+  var obj = new Image;
   var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+"1"+".jpg";
-  
-  item = build_z(imgURL);
-  var row = $('#row');
-  html = row.html();
-  row.html(html + item);
-  console.log(imgURL);
-  
+  obj.src = imgURL;
+  obj.onload = function(imgURL){
+    console.log(imgURL);
+    item = build_z(imgURL);
+    var row = $('#row');
+    html = row.html();
+    row.html(html + item);
+    
+    var imgName = "";
+    var c = imgURL.split("/")[2].split(".")[0].split("");
+    for(n = 0; n <= c.length; n++){
+      if(c[n] == "-"){
+        imgName += c[n];
+        imgName += 2;
+        n = c.length;
+      }else{
+        imgName += c[n];
+      }
+    }
+    var imgURL = "items/sets/"+imgName+".jpg";
+    check(imgURL, 3);
+  }
+}
+function check(imgURL, s){
   var obj = new Image;
   obj.src = imgURL;
-  obj.onload = Load(imgURL, 1);
-}
-function Load(imgURL, s){
-  var imgName = "";
-  var c = imgURL.split("/")[2].split(".")[0].split("");
-  for(n = 0; n <= c.length; n++){
-    if(c[n] == "-"){
-      imgName += c[n];
-      imgName += Number(s)+1;
-      n = c.length;
-    }else{
-      imgName += c[n];
+  obj.onload = function(imgURL){
+    console.log(imgURL);
+    item = build_z(imgURL);
+    var row = $('#row');
+    html = row.html();
+    row.html(html + item);
+    
+    var imgName = "";
+    var c = imgURL.split("/")[2].split(".")[0].split("");
+    for(n = 0; n <= c.length; n++){
+      if(c[n] == "-"){
+        imgName += c[n];
+        imgName += 3;
+        n = c.length;
+      }else{
+        imgName += c[n];
+      }
     }
+    var imgURL = "items/sets/"+imgName+".jpg";
+    
+    check(imgURL);
   }
-  var imgURL = "items/sets/"+imgName+".jpg";
-  item = build_z(imgURL);
-  var row = $('#row');
-  html = row.html();
-  row.html(html + item);
-  
-  var obj = new Image;
-  obj.src = imgURL;
-  obj.onload = Load1(imgURL, s+1);
 }
-function Load1(imgURL, s){
-  var imgName = "";
-  var c = imgURL.split("/")[2].split(".")[0].split("");
-  for(n = 0; n <= c.length; n++){
-    if(c[n] == "-"){
-      imgName += c[n];
-      imgName += Number(s)+1;
-      n = c.length;
-    }else{
-      imgName += c[n];
-    }
-  }
-  var imgURL = "items/sets/"+imgName+".jpg";
-  item = build_z(imgURL);
-  var row = $('#row');
-  html = row.html();
-  row.html(html + item);
-  
-  var obj = new Image;
-  obj.src = imgURL;
-  obj.onload = Load2(imgURL, s+1);
-}
-function Load2(imgURL, s){
-  var imgName = "";
-  var c = imgURL.split("/")[2].split(".")[0].split("");
-  for(n = 0; n <= c.length; n++){
-    if(c[n] == "-"){
-      imgName += c[n];
-      imgName += Number(s)+1;
-      n = c.length;
-    }else{
-      imgName += c[n];
-    }
-  }
-  var imgURL = "items/sets/"+imgName+".jpg";
-  item = build_z(imgURL);
-  var row = $('#row');
-  html = row.html();
-  row.html(html + item);
-  console.log(imgURL);
-  
-  var obj = new Image;
-  obj.src = imgURL;
-  obj.onload = Load3(imgURL, s+1);
-}
-function Load3(imgURL, s){
-  var imgName = "";
-  var c = imgURL.split("/")[2].split(".")[0].split("");
-  for(n = 0; n <= c.length; n++){
-    if(c[n] == "-"){
-      imgName += c[n];
-      imgName += Number(s)+1;
-      n = c.length;
-    }else{
-      imgName += c[n];
-    }
-  }
-  var imgURL = "items/sets/"+imgName+".jpg";
-  item = build_z(imgURL);
-  var row = $('#row');
-  html = row.html();
-  row.html(html + item);
-  console.log(imgURL);
-  
-  var obj = new Image;
-  obj.src = imgURL;
-  obj.onload = Load4(imgURL, s+1);
-}
-function Load4(imgURL, s){
-  var imgName = "";
-  var c = imgURL.split("/")[2].split(".")[0].split("");
-  for(n = 0; n <= c.length; n++){
-    if(c[n] == "-"){
-      imgName += c[n];
-      imgName += Number(s)+1;
-      n = c.length;
-    }else{
-      imgName += c[n];
-    }
-  }
-  var imgURL = "items/sets/"+imgName+".jpg";
-  item = build_z(imgURL);
-  var row = $('#row');
-  html = row.html();
-  row.html(html + item);
-  console.log(imgURL);
-  
- // var obj = new Image;
- // obj.onload = Load(imgURL, s+1);
- // obj.src = imgURL;
-}
+
 class Item {
   constructor(array) {
     this.id = array[0];
