@@ -9,9 +9,11 @@
   -ms-flex-pack: center;
   justify-content: center;
   //border-bottom: 2px solid white;
-  background: black;
-  position: relative;
+  position: fixed;
   z-index: 999;
+  height: max-content;
+  background: black;
+  width: 100%;
   top: 0;
   left: 0;
   //box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.1); }
