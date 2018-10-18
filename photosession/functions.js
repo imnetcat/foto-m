@@ -87,26 +87,14 @@ function cheaker(allItems){
   obj.onload = Load(imgURL, 1);
   obj.src = imgURL;
 }
-function Load(imgURL, n){
-  alert(imgURL + "           " + n);
+function Load(imgURL, s){
+  alert(imgURL + "           " + s);
   var imgName = "";
   var c = imgURL.split("/")[2].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
     if(c[n] == "-"){
       imgName += c[n];
-      if(c[n+2]){
-        if(c[n+3]){
-          if(c[n+4]){
-            imgName += Number(c[n+1]+c[n+2]+c[n+3]+c[n+4])+1;
-          }else{
-            imgName += Number(c[n+1]+c[n+2]+c[n+3])+1;
-          }
-        }else{
-          imgName += Number(c[n+1]+c[n+2])+1;
-        }
-      }else{
-        imgName += Number(c[n+1])+1;
-      }
+      imgName += Number(s)+1;
       n = c.length;
     }else{
       imgName += c[n];
@@ -119,7 +107,7 @@ function Load(imgURL, n){
   row.html(html + item);
   
   var obj = new Image;
-  obj.onload = Load(imgURL, n+1);
+  obj.onload = Load(imgURL, s+1);
   obj.src = imgURL;
 }
 class Item {
