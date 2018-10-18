@@ -67,14 +67,17 @@ function setFirst(allItems){
     row.html(html + item);
   }
   $('.img').on('click touch', (event) => {
-    console.log($(event.target)[0].src);
+    console.log($(event.target)[0].src.split("/")[5]);
     var flag = true;
     var i = 0;
     while(flag){
-      console.log(allItems[i].image);
-      if($(event.target)[0].src == allItems[i].image){
+      console.log(allItems[i].image.split("/")[1]);
+      if($(event.target)[0].src.split("/")[5] == allItems[i].image.split("/")[1]){
         console.log(allItems[i].count);
         set(allItems[i].count);
+        flag = false;
+      }
+      if(i == allItems.length){
         flag = false;
       }
       i++;
