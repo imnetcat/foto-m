@@ -104,7 +104,7 @@ function set(max){
     var Othis = $(this);
     var current;
     var all = Othis.parent().parent().children(".item").length;
-    for(n = 0; n < all; n++){
+    for(n = 1; n <= all; n++){
       console.log(Othis.parent().parent().children(".item:nth-child("+n+")").children(1).attr("src"));
       console.log(Othis.attr('src'));
       if(Othis.parent().parent().children(".item:nth-child("+n+")").children(1).attr("src") == Othis.attr('src')){
