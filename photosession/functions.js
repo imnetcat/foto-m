@@ -102,14 +102,11 @@ function set(max){
   }
 }
 
-
-
-
-
 class Item {
   constructor(array) {
     this.id = array[0];
     this.image = array[1];
     this.description = array[2];
+    this.count = array[3];
   }
 }
