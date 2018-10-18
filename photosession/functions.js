@@ -66,6 +66,7 @@ function setFirst(allItems){
     html = row.html();
     row.html(html + item);
   }
+  if($(".item").length % 2 == 1){$("#row").append($(build_shadow()))}
   $('.img').on('click touch', (event) => {
     var flag = true;
     var i = 0;
@@ -98,6 +99,7 @@ function set(max){
     item = build_z(imgURL + n +".jpg");
     row.html(row.html() + item);
   }
+  if($(".item").length % 2 == 1){$("#row").append($(build_shadow()))}
 }
 
 class Item {
