@@ -127,7 +127,7 @@ function set(max){
       if(current==0){ current = all }else{ current-- }
       $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
     });
-    $('#fullImg .fil-close-btn').click( () => {
+    $('#fullImg .close-mask').click( () => {
       $('#fullImg').css('visibility', 'hidden');
       $('#fullImg > div > img').attr("src", "none");
       $(".left").off("click");
