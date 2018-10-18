@@ -232,7 +232,7 @@ body {
 }
 
 #floatingCirclesG{
-  position: relative;
+  position: absolute;
   width:122px;
   height:122px;
   transform:scale(0.6);
