@@ -77,15 +77,14 @@ function cheaker(allItems){
   var item;
   var row = $('#row');
   row.html("");
-  var n = 1;
   if($(event.target).parent().attr("class") != "item"){
     var eventSrc = $(event.target).parent().parent().find("img")[0].src;
   }else{
     var eventSrc = $(event.target).parent().find("img")[0].src;
   } 
-  var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+n+".jpg";
+  var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-"+"1"+".jpg";
   var obj = new Image;
-  obj.onload = Load(imgURL, n);
+  obj.onload = Load(imgURL, 1);
   obj.src = imgURL;
 }
 function Load(imgURL, n){
