@@ -90,7 +90,7 @@ function cheaker(allItems){
 }
 function Load(imgURL, n){
   var imgName = "";
-  var c = $(event.target)[0].src.split("/")[6].split(".")[0].split("");
+  var c = imgURL.split("/")[2].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
     if(c[n] == "-"){
       imgName += c[n];
