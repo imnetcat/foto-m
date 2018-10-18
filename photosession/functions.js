@@ -88,7 +88,6 @@ function cheaker(allItems){
   obj.src = imgURL;
 }
 function Load(imgURL, s){
-  alert(imgURL + "           " + s);
   var imgName = "";
   var c = imgURL.split("/")[2].split(".")[0].split("");
   for(n = 0; n <= c.length; n++){
@@ -105,6 +104,8 @@ function Load(imgURL, s){
   var row = $('#row');
   html = row.html();
   row.html(html + item);
+  alert(row);
+  alert(imgURL + "           " + s);
   
   var obj = new Image;
   obj.onload = Load(imgURL, s+1);
