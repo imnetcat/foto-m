@@ -5,7 +5,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="functions.js"></script>
   <script src="pre-load.js"></script>
-  <script src="post-load.js"></script>
 </head>
 <body>
   <nav role='navigation' id="menu">
