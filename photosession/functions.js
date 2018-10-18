@@ -105,20 +105,24 @@ function set(max){
     var current;
     var all = Othis.parent().parent().children(".item").length;
     for(n = 0; n < all; n++){
+      console.log(Othis.parent().parent().children(".item:nth-child("+n+")").children(1).attr("src"));
+      console.log(Othis.attr('src'));
       if(Othis.parent().parent().children(".item:nth-child("+n+")").children(1).attr("src") == Othis.attr('src')){
         current = n;
+        console.log(current);
       }
     }
+        console.log(current);
     $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.attr('src').split('/')[2]);
     $('#fullImg').css({ "visibility": "visible"});
     $(".left").click( () => {
       if(current==1){ current = all }else{ current-- }
-      console.log("children(.item:nth-child("+current+")");
+      console.log("children(.item:nth-child("+current+"))");
       $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
     })
     $(".right").click( () => {
       if(current==all){ current = 1 }else{ current++ }
-      console.log("children(.item:nth-child("+current+")");
+      console.log("children(.item:nth-child("+current+"))");
       $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
     });
     $("#fullImg div:nth-child(1)").on( "swipeleft", function(){ 
