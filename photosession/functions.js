@@ -113,7 +113,7 @@ function check(imgURL, s){
     this.onload = "";
     this.onerror = "";
   }
-  obj.onload = cCheck(imgURL);
+  obj.onload = cCheck(imgURL, s);
 }
 
 function cCheck(imgURL, s){
