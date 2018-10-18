@@ -102,7 +102,7 @@ function cheaker(allItems){
       }else{
         imgName += c[n];
       }
-    }
+    }(imgURL);
     var imgURL = "items/sets/"+imgName+".jpg";
     check(imgURL, 3);
   }
@@ -127,7 +127,7 @@ function check(imgURL, s){
       }else{
         imgName += c[n];
       }
-    }
+    }(imgURL);
     var imgURL = "items/sets/"+imgName+".jpg";
     
     check(imgURL);
