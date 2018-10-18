@@ -113,12 +113,12 @@ function set(max){
     $('#fullImg').css({ "visibility": "visible"});
     $(".left").click( () => {
       if(current==1){ current = all }else{ current-- }
-      console.log('children(".item:nth-child("+current+")"');
+      console.log("children(".item:nth-child("+current+")");
       $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
     })
     $(".right").click( () => {
       if(current==all){ current = 1 }else{ current++ }
-      console.log('children(".item:nth-child("+current+")"');
+      console.log("children(".item:nth-child("+current+")"');
       $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
     });
     $("#fullImg div:nth-child(1)").on( "swipeleft", function(){ 
