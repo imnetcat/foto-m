@@ -9,7 +9,7 @@ function add_in($database, $image, $derectory, $description, $count){
   }
   $query = "INSERT INTO $derectory ( id, image, description, count) VALUES (?,?,?,?)";
   $stmt = mysqli_prepare($database, $query);
-  mysqli_stmt_bind_param($stmt, "iss", $new_id, $image, $description, $count);
+  mysqli_stmt_bind_param($stmt, "isss", $new_id, $image, $description, $count);
   if(mysqli_stmt_execute($stmt)){
     mysqli_stmt_close($stmt);
     return "Изображение успешно добавлено!";
@@ -30,7 +30,7 @@ function delete($database, $id, $derectory){
 function change($database, $id, $derectory, $image, $description, $count){
   $query = "UPDATE $derectory SET image=?, description=?, count=? WHERE id=$id";
   $stmt = mysqli_prepare($database, $query);
-  mysqli_stmt_bind_param($stmt, "ss", $image, $description, $count);
+  mysqli_stmt_bind_param($stmt, "sss", $image, $description, $count);
   if(mysqli_stmt_execute($stmt)){
     mysqli_stmt_close($stmt);
     return "Изображение успешно изменено";
