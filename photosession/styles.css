@@ -73,13 +73,11 @@ body {
 
 .fil-close-btn {
   left: 48%;
-  top: 1h;
   position: relative;
   cursor: pointer;
   display: inline-block;
   width: 5vh;
   height: 5vh;
-  overflow: hidden; 
 }
 .fil-close-btn:hover::before, .fil-close-btn:hover::after {
   background: red; 
