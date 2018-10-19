@@ -29,9 +29,7 @@
     <div class="carousel">
       <div class="btn left"><span></span></div>
       <img src=""/>
-      <div class="btn right"><span></span></div>
-    </div>
-    <div class="floatingCirclesG">
+      <div class="floatingCirclesG">
       <div class="f_circleG" id="frotateG_01"></div>
       <div class="f_circleG" id="frotateG_02"></div>
       <div class="f_circleG" id="frotateG_03"></div>
@@ -40,6 +38,8 @@
       <div class="f_circleG" id="frotateG_06"></div>
       <div class="f_circleG" id="frotateG_07"></div>
       <div class="f_circleG" id="frotateG_08"></div>
+    </div>
+      <div class="btn right"><span></span></div>
     </div>
   </div>
   
