@@ -129,7 +129,6 @@ body {
   margin-top: 70px;
   max-height: max-content;
   width: 100%;
-  height: calc(100% - 70px);
   max-width: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -145,7 +144,6 @@ body {
   z-index: 109;
   width: auto;
   max-width: 100%;
-  height: calc(100% - 70px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
