@@ -74,7 +74,7 @@ body {
 .fil-close-btn {
   left: 48%;
   top: 2vh;
-  position: absolute;
+  position: relative;
   cursor: pointer;
   display: inline-block;
   width: 5vh;
@@ -98,9 +98,24 @@ body {
 .fil-close-btn::after {
   transform: rotate(-45deg); 
 }
+.carousel {
+  position: relative;
+  margin-top: 70px;
+  max-height: max-content;
+  width: 100%;
+  max-width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
 .close-mask {
   width: 100%;
-  position: absolute;
+  position: relative;
   height: 7vh;
 }
 
