@@ -8,8 +8,6 @@ function build_shadow(){
   return '<div class="shadowItem"></div>';
 }
 function adaptation_1(){
-  var client_w = $("body").width();
-  var client_h = $("body").height();
 }
 function adaptation_2(){
 }
@@ -19,6 +17,24 @@ function adaptation(){
   }else{
     var client_w = screen.width;
   }
+  console.log(client_w);
+  if(client_w <= 800){
+    $('.right:hover').css({
+      "background-position": ""
+    }
+    $('.left:hover).css({
+      "background-position": ""
+    }
+    $('.right').css({   
+      "background-image": "linear-gradient(to right, #FFFFFF 81%, #000000 100%);"
+    }  
+    $('.left').css({   
+      "background-image": "linear-gradient(to right, #FFFFFF 81%, #000000 100%);"
+    } 
+    $('.btn').css({   
+    "width": "50%",
+    "opacity": "0.2"
+    }
 }
 
 function load_all(){
