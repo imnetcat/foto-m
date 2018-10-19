@@ -85,7 +85,7 @@ function setFirst(allItems){
 function set(max){
   $("html, body").animate({
     scrollTop: $("#row").offset().top
-  }, 1000);
+  }, 200);
   var item;
   var row = $('#row');
   row.html("");
