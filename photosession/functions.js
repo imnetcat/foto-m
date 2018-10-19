@@ -21,20 +21,20 @@ function adaptation(){
   if(client_w <= 800){
     $('.right:hover').css({
       "background-position": ""
-    }
+    });
     $('.left:hover').css({
       "background-position": ""
-    }
+    });
     $('.right').css({   
       "background-image": "linear-gradient(to right, #FFFFFF 81%, #000000 100%);"
-    }  
+    });
     $('.left').css({   
       "background-image": "linear-gradient(to right, #FFFFFF 81%, #000000 100%);"
-    } 
+    });
     $('.btn').css({   
     "width": "50%",
     "opacity": "0.2"
-    }
+    });
 }
 
 function load_all(){
