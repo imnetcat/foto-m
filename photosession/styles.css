@@ -73,7 +73,7 @@ body {
 
 .fil-close-btn {
   left: 48%;
-  top: 2vh;
+  top: 1h;
   position: relative;
   cursor: pointer;
   display: inline-block;
@@ -87,9 +87,9 @@ body {
 .fil-close-btn::before, .fil-close-btn::after {
   content: '';
   position: absolute;
-  height: 4px;
+  height: 5px;
   width: 5vh;
-  margin-top: 20px;
+  margin-top: 40px;
   background: white;
 }
 .fil-close-btn::before {
@@ -100,10 +100,7 @@ body {
 }
 .carousel {
   position: relative;
-  margin-top: 70px;
   max-height: max-content;
-  width: 100%;
-  max-width: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
