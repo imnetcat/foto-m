@@ -32,9 +32,10 @@ function adaptation(){
       "background-image": "linear-gradient(to right, #FFFFFF 81%, #000000 100%);"
     });
     $('.btn').css({   
-    "width": "50%",
-    "opacity": "0.2"
+      "width": "50%",
+      "opacity": "0.2"
     });
+  }
 }
 
 function load_all(){
