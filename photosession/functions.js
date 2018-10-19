@@ -22,7 +22,7 @@ function adaptation(){
     $('.right:hover').css({
       "background-position": ""
     }
-    $('.left:hover).css({
+    $('.left:hover').css({
       "background-position": ""
     }
     $('.right').css({   
