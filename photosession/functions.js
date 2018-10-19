@@ -7,11 +7,9 @@ function build(id, src, description){
 function build_shadow(){
   return '<div class="shadowItem"></div>';
 }
-function adaptation_1(){
-}
 function adaptation_2(){
 }
-function adaptation(){
+function adaptation_1(){
   if($('body').width() < screen.width){
     var client_w = $('body').width();
   }else{
