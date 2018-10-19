@@ -26,7 +26,7 @@
         <div></div>
       </div>
     </div>
-    <div>
+    <div class="carousel">
       <div class="btn left"><span></span></div>
       <img src=""/>
       <div class="btn right"><span></span></div>
