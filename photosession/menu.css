@@ -10,7 +10,7 @@
   justify-content: center;
   position: fixed;
   z-index: 999;
-  height: 80px;
+  height: auto;
   background: black;
   width: 100%;
   top: 0;
@@ -24,7 +24,15 @@
     -webkit-margin-after: 0;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
-    -webkit-padding-start: 0; }
+    -webkit-padding-start: 0; 
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
     /* line 19, menu.scss */
     #menu ul li {
       float: left;
