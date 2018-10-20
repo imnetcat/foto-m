@@ -10,6 +10,8 @@ function build_shadow(){
 function adaptation_2(){
 }
 function adaptation_1(){
+  console.log($('body').width());
+  console.log(screen.width);
   if($('body').width() < screen.width){
     var client_w = $('body').width();
   }else{
