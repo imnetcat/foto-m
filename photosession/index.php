@@ -20,11 +20,12 @@
   <div id="row"></div>
   
   <div id="fullImg">
-    <div class="fil-close-btn">
-      <div></div>
-      <div></div>
+    <div class="close-mask">
+      <div class="fil-close-btn">
+        <div></div>
+        <div></div>
+      </div>
     </div>
-    <div class="close-mask"></div>
     <div class="carousel">
       <div class="btn left"><div></div><span></span></div>
       <img src=""/>
