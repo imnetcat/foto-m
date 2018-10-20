@@ -217,7 +217,7 @@ body {
   height: 3vw;
   width: 5px;
   display: block;
-  background: #737373;
+  background: white;
   transform: rotate(45deg);
   margin-left: 1.75vw;
   position: absolute;
@@ -227,7 +227,7 @@ body {
   height: 3vw;
   width: 5px;
   display: block;
-  background: #737373;
+  background: white;
   transform: rotate(-90deg);
   position: absolute;
   margin-top: 1.5vw;
