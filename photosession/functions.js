@@ -1,5 +1,5 @@
 function build_z(src){
-  return '<div class="item"><img class="img" style="cursor: -webkit-zoom-in; cursor:-moz-zoom-in; cursor: zoom-in;" src="'+src+'"></div>';
+  return '<div class="item"><img class="img" style="z-index: 10; cursor: -webkit-zoom-in; cursor:-moz-zoom-in; cursor: zoom-in;" src="'+src+'"><div id="floatingCirclesG"><div class="f_circleG" id="frotateG_01"></div><div class="f_circleG" id="frotateG_02"></div><div class="f_circleG" id="frotateG_03"></div><div class="f_circleG" id="frotateG_04"></div><div class="f_circleG" id="frotateG_05"></div><div class="f_circleG" id="frotateG_06"></div><div class="f_circleG" id="frotateG_07"></div><div class="f_circleG" id="frotateG_08"></div></div></div>';
 }
 function build(id, src, description){
   return '<div class="item"><img id="'+id+'" class="img" src="'+src+'"><div class="description">'+description+'</div></div>';
@@ -20,6 +20,7 @@ function adaptation(){
     var client_w = screen.width;
   }
 }
+
 function load_all(){
   $.ajax({
     type: "POST",
@@ -30,11 +31,9 @@ function load_all(){
     success: function(data){
       var raw_data = data.split('array');
       var allItems = new Array();
-      console.log(data);
       for( n = 1; n < raw_data.length; n++){
         allItems[n-1] = new Item(php_array_to_js_array(raw_data[n]));
       }
-      console.log(allItems);
       setFirst(allItems);
     }
   });
@@ -68,55 +67,44 @@ function setFirst(allItems){
     row.html(html + item);
   }
   $('.img').on('click touch', (event) => {
-    set(allItems);
-  });
-  $('#back, #logo').on('click touch', () => {
-    $("html, body").animate({
-        scrollTop: $("#row").offset().top
-    }, 1000);
-    if($('body').width() < screen.width){
-      var client_w = $('body').width();
-    }else{
-      var client_w = screen.width;
-    } 
-    var item;
-    var row = $('#row');
-    console.log(row);
-    row.html("");
-    var html;
-    for( n = 0; n <  allItems.length; n++){
-      item = build(allItems[n].id, allItems[n].image, allItems[n].description);
-      html = row.html();
-      row.html(html + item);
+    var flag = true;
+    var i = 0;
+    while(flag){
+      if($(event.target)[0].src.split("/")[5] == allItems[i].image.split("/")[1]){
+        set(allItems[i].count);
+        flag = false;
+      }
+      if(i == allItems.length){
+        flag = false;
+      }
+      i++;
     }
-    if(($(".item").length + $(".shadowItem").length) % 2 == 1){$("#row").append(build_shadow)}
-    $('.img').on('click touch', (event) => {
-      set(allItems);
-    });
-  });		   
+  });
 }
-function set(allItems){
+function set(max){
   $("html, body").animate({
     scrollTop: $("#row").offset().top
   }, 1000);
   var item;
   var row = $('#row');
   row.html("");
-  for( n = 0; n < 25; n++){
-    if($(event.target).parent().attr("class") != "item"){
-      var eventSrc = $(event.target).parent().parent().find("img")[0].src;
-    }else{
-      var eventSrc = $(event.target).parent().find("img")[0].src;
-    }
-    item = build_z(eventSrc.split("/")[1]+"-"+n);
-    html = row.html();
-    row.html(html + item);
+  if($(event.target).parent().attr("class") != "item"){
+    var eventSrc = $(event.target).parent().parent().find("img")[0].src;
+  }else{
+    var eventSrc = $(event.target).parent().find("img")[0].src;
+  } 
+  var imgURL = "items/sets/"+eventSrc.split("/")[5].split(".")[0]+"-";
+  for(n = 1; n <= max; n++){
+    item = build_z(imgURL + n +".jpg");
+    row.html(row.html() + item);
   }
 }
+
 class Item {
   constructor(array) {
     this.id = array[0];
     this.image = array[1];
     this.description = array[2];
+    this.count = array[3];
   }
 }

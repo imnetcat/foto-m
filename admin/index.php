@@ -53,7 +53,8 @@
 	    action: 'add_in',
 	    image: "photosession/"+$('#new_image').val(),
 	    derectory: "photosession",
-	    description: $('#new_description').val()
+	    description: $('#new_description').val(),
+	    count: $('#new_count').val()
 	  },
           success: function(data){
 	    $('#info').html($('#info').html() + "<br>" + data);
@@ -81,7 +82,8 @@
 	      var a = $("<div class='a' style='position:absolute; width:600px;'></div>");
 	      a.append($("<span>ID: </span><span class='id'>"+allItems[n].id+"</span><br>"+
 	      "<span>Файл: </span><span class='image'>"+allItems[n].image.split("/")[1]+"</span><br>"+
-              "<span>Описание: </span><span class='description'>"+allItems[n].description+"</span><br>"));
+              "<span>Описание: </span><span class='description'>"+allItems[n].description+"</span><br>"+
+              "<span>Файлов в сете: </span><span class='count'>"+allItems[n].count+"</span><br>"));
 	      div.append(a);
 	      var b = $("<img class='b' style='width:175px; height:175px; position:absolute; margin-left:600px' src='/"+allItems[n].image.split("/")[0]+"/items/"+allItems[n].image.split("/")[1]+"'>");
 	      div.append(b);
@@ -114,7 +116,8 @@
                   id: ID,
                   derectory: "photosession",
 	          image: "photosession/"+$('#new_image').val(),
-	          description: $('#new_description').val()
+	          description: $('#new_description').val(),
+	          count: $('#new_count').val()
                 },
                 success: function(data){
                   $('#info').html($('#info').html() + "<br>" + data);
@@ -124,8 +127,10 @@
             $('.copy').on('click', (ev) => {
 	      var image = $(ev.currentTarget).parent().parent().find('.image').text();
 	      var description = $(ev.currentTarget).parent().parent().find('.description').text();
+	      var count = $(ev.currentTarget).parent().parent().find('.count').text();
 	      $('#new_image').val(image);
 	      $('#new_description').val(description);
+	      $('#new_count').val(count);
             });
           }
         });
@@ -148,6 +153,7 @@
           this.id = array[0];
           this.image = array[1];
           this.description = array[2];
+          this.count = array[3];
         }
       }
       
@@ -159,6 +165,7 @@
   <br>
   <p><input id="new_image" placeholder="Файл"> Например image-1.jpg</p>
   <p><textarea id="new_description" placeholder="Описание" multiline="true"></textarea>То что будет отображатся при наведении на изображение</p>
+  <p><textarea id="new_count" placeholder="Количевство файлов" multiline="true"></textarea>Количевство файлов в сете</p>
   <p class="center"><button id="inphotosession">В фотосессии</button><button id="">В архив</button></p>
   <p class="center"><button id="get_photosession">Загрузить фотосессии</button><button id="">Загрузить архив</button></p>
 </div>

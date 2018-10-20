@@ -8,13 +8,13 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  //border-bottom: 2px solid white;
-  background: black;
-  position: relative;
+  position: fixed;
   z-index: 999;
+  height: 80px;
+  background: black;
+  width: 100%;
   top: 0;
-  left: 0;
-  //box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.1); }
+  left: 0; }
   /* line 9, menu.scss */
   #menu ul {
     list-style: none;
@@ -33,9 +33,12 @@
       transition: all .2s ease-in-out; }
       /* line 24, menu.scss */
       #menu ul li a {
+        border-left: 2px solid white;
+        border-right: 2px solid white;
         display: block;
         color: white;
-        padding: 30px 20px;
+        padding: 0px 30px;
+        margin: 27px 0px;
         font-size: .9em;
         letter-spacing: 1px;
         text-decoration: none;
@@ -45,7 +48,7 @@
         background-image: linear-gradient(to top, #FFFFFF 0%, #000000 51%); }
       /* line 36, menu.scss */
       #menu ul li a:hover {
-        background-position: bottom center; }
+        padding: 30px 30px; }
     /* line 40, menu.scss */
     #menu ul li:hover > ul {
       display: block; }

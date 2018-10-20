@@ -9,7 +9,8 @@ switch ($_POST['action']){
     $image = $_POST['image'];
     $derectory = $_POST['derectory'];
     $description = $_POST['description'];
-    echo add_in($database, $image, $derectory, $description);
+    $count = $_POST['count'];
+    echo add_in($database, $image, $derectory, $description, $count);
   break;
   case 'get':
     $derectory = $_POST['derectory'];
@@ -25,7 +26,8 @@ switch ($_POST['action']){
     $derectory = $_POST['derectory'];
     $image = $_POST['image'];
     $description = $_POST['description'];
-    echo change($database, $id, $derectory, $image, $description);
+    $count = $_POST['count'];
+    echo change($database, $id, $derectory, $image, $description, $count);
   break;
 };
 ?>
