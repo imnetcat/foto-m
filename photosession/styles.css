@@ -172,11 +172,11 @@ body {
 .right {
   background-image: linear-gradient(to right, #000000 0%, #FFFFFF 51%, #000000 100%);
   background-position: right center;
-  right: 0;
+  right: -3.5vw;
 }
 .left {
   background-image: linear-gradient(to right, #000000 0%, #FFFFFF 51%, #000000 100%);
-  left: 0;
+  left: -3.5vw;
 }
 .left:hover {
   background-position: right center;
