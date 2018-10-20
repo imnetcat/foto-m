@@ -155,9 +155,7 @@ body {
   position: relative;
   z-index: 109;
   max-width: 100%;
-  width: max-content;
-  height: max-content;
-  max-height: 100%;
+  height: 100%;
 }
 .btn {
   position: absolute;
