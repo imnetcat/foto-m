@@ -190,9 +190,6 @@ body {
 }
 .right:active {
 }
-.btn span {
-  margin-top: 35vh;
-}
 .btn:hover span {
   transform: scale(1.2);
 }
