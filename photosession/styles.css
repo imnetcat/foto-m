@@ -86,7 +86,7 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.close-mask:hover .fil-close-btn:hover::before, .close-mask:hover .fil-close-btn:hover::after {
+.close-mask:hover > .fil-close-btn::before, .close-mask:hover > .fil-close-btn::after {
   background: red; 
 }
 .fil-close-btn::before, .fil-close-btn::after {
