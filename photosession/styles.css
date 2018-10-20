@@ -72,12 +72,19 @@ body {
 
 
 .fil-close-btn {
-  left: 48%;
   position: absolute;
   cursor: pointer;
   display: inline-block;
   width: 5vh;
   height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .close-mask + .fil-close-btn:hover::before, .fil-close-btn:hover::after {
   background: red; 
