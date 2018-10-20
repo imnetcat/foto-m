@@ -134,11 +134,11 @@ function set(max){
       if(current==all){ current = 1 }else{ current++ }
       $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
     });
-    $("#fullImg div:nth-child(1)").on( "swipeleft", function(){ 
+    $(".carousel").on( "swipeleft", function(){ 
       if(current==all){ current = 1 }else{ current++ }
       $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
     });
-    $("#fullImg div:nth-child(1)").on( "swiperight", function(){
+    $(".carousel").on( "swiperight", function(){
       if(current==0){ current = all }else{ current-- }
       $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
     });
