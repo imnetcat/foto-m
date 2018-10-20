@@ -20,13 +20,14 @@
   <div id="row"></div>
   
   <div id="fullImg">
-    <div class="fil-close-btn">
-      <div></div>
-      <div></div>
+    <div class="close-mask">
+      <div class="fil-close-btn">
+        <div></div>
+        <div></div>
+      </div>
     </div>
-    <div class="close-mask"></div>
     <div class="carousel">
-      <div class="btn left"><span></span></div>
+      <div class="btn left"><div></div><span></span></div>
       <img src=""/>
       <div class="floatingCirclesG">
       <div class="f_circleG" id="frotateG_01"></div>
@@ -38,7 +39,7 @@
       <div class="f_circleG" id="frotateG_07"></div>
       <div class="f_circleG" id="frotateG_08"></div>
     </div>
-      <div class="btn right"><span></span></div>
+      <div class="btn right"><div></div><span></span></div>
     </div>
   </div>
   

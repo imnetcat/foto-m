@@ -86,7 +86,7 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.close-mask:hover, .fil-close-btn:hover::before, .fil-close-btn:hover::after {
+.close-mask:hover > .fil-close-btn::before, .close-mask:hover > .fil-close-btn::after {
   background: red; 
 }
 .fil-close-btn::before, .fil-close-btn::after {
@@ -122,6 +122,14 @@ body {
   width: 100%;
   position: relative;
   height: 7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 #fullImg {
@@ -146,7 +154,8 @@ body {
 #fullImg img {
   position: relative;
   z-index: 109;
-  max-width: max-content;
+  max-width: 100%;
+  height: 100%;
 }
 .btn {
   position: absolute;
@@ -179,9 +188,6 @@ body {
 }
 .right:active {
 }
-.btn span {
-  margin-top: 35vh;
-}
 .btn:hover span {
   transform: scale(1.2);
 }
@@ -193,7 +199,6 @@ body {
   transform: rotate(-45deg);
   margin-left: 1.75vw;
   position: absolute;
-  top: -10%;
 }
 .btn.right span::before {
   content: '';
@@ -205,13 +210,12 @@ body {
   margin-left: -1.5vw;
   position: absolute;
   margin-top: 1.5vw;
-  top: -10%;
 }
 .btn.left span {
   height: 3vw;
   width: 5px;
   display: block;
-  background: #737373;
+  background: white;
   transform: rotate(45deg);
   margin-left: 1.75vw;
   position: absolute;
@@ -221,12 +225,19 @@ body {
   height: 3vw;
   width: 5px;
   display: block;
-  background: #737373;
+  background: white;
   transform: rotate(-90deg);
   position: absolute;
   margin-top: 1.5vw;
   margin-left: 1.5vw;
 }
+.btn div {
+  position: relative;
+  height: 45%;
+  width: 100%;
+}
+
+
 .floatingCirclesG{
   position: absolute;
   width:122px;
