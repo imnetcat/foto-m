@@ -86,7 +86,7 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
 }
-.close-mask:hover, .fil-close-btn:hover::before, .fil-close-btn:hover::after {
+.close-mask:hover .fil-close-btn:hover::before, .close-mask:hover .fil-close-btn:hover::after {
   background: red; 
 }
 .fil-close-btn::before, .fil-close-btn::after {
@@ -122,6 +122,14 @@ body {
   width: 100%;
   position: relative;
   height: 7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 #fullImg {
