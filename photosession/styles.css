@@ -156,7 +156,7 @@ body {
   z-index: 110;
   text-align: center;
   display: block;
-  opacity: 0.6;
+  opacity: 0.3;
   transition: background-position 0.5s;
   background-size: 200% auto;
 }
@@ -189,21 +189,23 @@ body {
   height: 3vw;
   width: 5px;
   display: block;
-  background: #737373;
+  background: white;
   transform: rotate(-45deg);
   margin-left: 1.75vw;
   position: absolute;
+  top: -10%;
 }
 .btn.right span::before {
   content: '';
   height: 3vw;
   width: 5px;
   display: block;
-  background: #737373;
+  background: white;
   transform: rotate(90deg);
   margin-left: -1.5vw;
   position: absolute;
   margin-top: 1.5vw;
+  top: -10%;
 }
 .btn.left span {
   height: 3vw;
