@@ -10,15 +10,11 @@
   justify-content: center;
   position: fixed;
   z-index: 999;
-  height: auto;
-  background: black;
-  width: 100%;
-  top: 0;
-  left: 0; }
+  width: 100%; }
   /* line 9, menu.scss */
   #menu ul {
     list-style: none;
-    position: relative;
+    position: absolute;
     display: inline-block;
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
@@ -51,9 +47,7 @@
         letter-spacing: 2px;
         text-decoration: none;
         text-transform: uppercase;
-        transition: 0.5s;
-        background-size: 100% 200%;
-        background-image: linear-gradient(to top, #FFFFFF 0%, #000000 51%); }
+        transition: 0.5s; }
       /* line 36, menu.scss */
       #menu ul li a:hover {
         padding: 30px 30px; }
