@@ -154,7 +154,7 @@ body {
 #fullImg img {
   position: relative;
   z-index: 109;
-  max-width: 100%;
+  max-width: calc(100vw - 7vw - 34px);
   height: 100%;
 }
 .btn {
