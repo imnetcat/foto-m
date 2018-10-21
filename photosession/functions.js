@@ -157,7 +157,7 @@ function set(max){
       });
     $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.attr('src').split('/')[2]);
     $('#fullImg').css({ "visibility": "visible"});
-    $(".left").click( () => {
+    $(".left").on('click touch swiperight', () => {
       if(current==1){ current = all }else{ current-- }
       var REimage = new Image();
       REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
@@ -183,60 +183,8 @@ function set(max){
         $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
       }
     });
-    $(".right").click( () => {
+    $(".right").on('click touch swipeleft', () => {
       if(current==all){ current = 1 }else{ current++ }
-      var REimage = new Image();
-      REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
-      REimage.onload = function() {
-        console.log('height: ' + REimage.height);
-        console.log('width: ' + REimage.width);
-        console.log('WIN width: ' + $('#fullImg').width());
-        console.log('WIN height: ' + $('#fullImg').height());
-        var x = ($('#fullImg').height() * REimage.width) / REimage.height;
-        if(x <= $('#fullImg').width()){
-          var y = (x * REimage.height) / REimage.width;
-        }else{
-          var y = ($('#fullImg').width() * REimage.height) / REimage.width;
-          x = (y * REimage.width) / REimage.height;
-        }
-        console.log('x : ' + x);
-        console.log('y : ' + y);
-        $('#fullImg > div > img').css({
-          "height": y,
-          "width": x
-        });
-        $('#fullImg > div > img').attr("src", "");
-        $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
-      }
-    });
-    $(".btn").on( "swipeleft", function(){ 
-      if(current==all){ current = 1 }else{ current++ }
-      var REimage = new Image();
-      REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
-      REimage.onload = function() {
-        console.log('height: ' + REimage.height);
-        console.log('width: ' + REimage.width);
-        console.log('WIN width: ' + $('#fullImg').width());
-        console.log('WIN height: ' + $('#fullImg').height());
-        var x = ($('#fullImg').height() * REimage.width) / REimage.height;
-        if(x <= $('#fullImg').width()){
-          var y = (x * REimage.height) / REimage.width;
-        }else{
-          var y = ($('#fullImg').width() * REimage.height) / REimage.width;
-          x = (y * REimage.width) / REimage.height;
-        }
-        console.log('x : ' + x);
-        console.log('y : ' + y);
-        $('#fullImg > div > img').css({
-          "height": y,
-          "width": x
-        });
-        $('#fullImg > div > img').attr("src", "");
-        $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
-      }
-    });
-    $(".btn").on( "swiperight", function(){
-      if(current==0){ current = all }else{ current-- }
       var REimage = new Image();
       REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
       REimage.onload = function() {
