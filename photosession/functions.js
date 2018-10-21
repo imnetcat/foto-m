@@ -37,7 +37,12 @@ function adaptation_1(){
     });
     $('.btn').css({   
       "width": "50%",
-      "opacity": "0.2"
+      "opacity": "0",
+      "cursor": "default"
+    });
+    $('.btn').html("");
+    $('.carosel').css({
+      "max-width": ""
     });
   }
 }
