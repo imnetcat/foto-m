@@ -69,6 +69,9 @@ div[data-role="page"] {
   height: 100%;
   transition: scale 0.5s;
 }
+.zoomble {
+  transform: none;
+}
 .img:hover {
   transform: scale(1.2); 
 }
