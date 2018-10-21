@@ -11,8 +11,8 @@
   <nav role='navigation' id="menu">
     <ul>
       <li><a href="">Пейзаж</a></li>
-      <li><a href="">Фотосессия</a></li>
-      <li><a href="/photosession/">Репортаж</a></li>
+      <li><a href="/photosession/">Фотосессия</a></li>
+      <li><a href="">Репортаж</a></li>
       <li><a href="">Ретуш</a></li>
       <li><a href="">Другое</a></li>
     </ul>
