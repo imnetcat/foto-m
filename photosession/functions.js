@@ -8,7 +8,10 @@ function build_shadow(){
   return '<div class="shadowItem"></div>';
 }
 function adaptation_2(){
-  $('html').attr('class', '');
+  $('.ui-loader-default').remove();
+  $(':focus').css({
+    "outline": ""
+  });
 }
 function adaptation_1(){
   console.log($('body').width());
