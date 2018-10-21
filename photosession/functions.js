@@ -209,7 +209,7 @@ function set(max){
         $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
       }
     });
-    $("#fullImg > div > img").on( "swipeleft", function(){ 
+    $(".btn").on( "swipeleft", function(){ 
       if(current==all){ current = 1 }else{ current++ }
       var REimage = new Image();
       REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
@@ -235,7 +235,7 @@ function set(max){
         $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
       }
     });
-    $("#fullImg > div > img").on( "swiperight", function(){
+    $(".btn").on( "swiperight", function(){
       if(current==0){ current = all }else{ current-- }
       var REimage = new Image();
       REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
