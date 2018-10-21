@@ -9,11 +9,21 @@ body {
   font-stretch: normal;
   font-variant: small-caps;
 }
+div[data-role="page"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
 #row {
   padding-top: 80px;
   position: absolute;
   padding-bottom: 50px;
-  width: auto;
+  width: calc(80vh + 100px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
