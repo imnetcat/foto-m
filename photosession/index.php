@@ -2,7 +2,7 @@
 <html><head>
   <link rel="stylesheet" href="styles.css" type="text/css">
   <link rel="stylesheet" href="menu.css" type="text/css">
-  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" href="/jquery_mobile/jquery.mobile-1.4.5.min.css" />
   <script src="/jquery_mobile/jquery.mobile-1.4.5.min.js"></script>
   <script src="functions.js"></script>
