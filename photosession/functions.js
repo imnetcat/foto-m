@@ -135,6 +135,26 @@ function set(max){
         current = n;
       }
     }
+    var REimage = new Image();
+    REimage.src = "/photosession/items/sets/"+Othis.attr('src').split('/')[2];
+    REimage.onload = function() {
+      console.log('height: ' + REimage.height);
+      console.log('width: ' + REimage.width);
+      console.log('WIN width: ' + $('.carousel').width);
+      console.log('WIN height: ' + $('.carousel').height);
+      var x = ($('.carousel').height * REimage.width) \ REimage.height;
+      if(x <= $('.carousel').width){
+        var y = (x * REimage.height) \ REimage.width;
+      }else{
+        var y = ($('.carousel').width * REimage.height) \ REimage.width;
+        x = (y * REimage.width) \ REimage.height;
+      }
+      console.log('x : ' + x);
+      console.log('y : ' + y);
+      $('#fullImg > div > img').css({
+        "height": y,
+        "width": x
+      });
     $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.attr('src').split('/')[2]);
     $('#fullImg').css({ "visibility": "visible"});
     $(".left").click( () => {
@@ -164,6 +184,7 @@ function set(max){
       $(".right").off("click");
       $('#fullImg .fil-close-btn').off("click");
     });
+    }
   });
 }
 
