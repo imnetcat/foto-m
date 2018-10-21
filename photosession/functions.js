@@ -8,6 +8,7 @@ function build_shadow(){
   return '<div class="shadowItem"></div>';
 }
 function adaptation_2(){
+  $('html').attr('class', '');
 }
 function adaptation_1(){
   console.log($('body').width());
