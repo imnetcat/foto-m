@@ -138,10 +138,6 @@ function set(max){
     var REimage = new Image();
     REimage.src = "/photosession/items/sets/"+Othis.attr('src').split('/')[2];
     REimage.onload = function() {
-      console.log('height: ' + REimage.height);
-      console.log('width: ' + REimage.width);
-      console.log('WIN width: ' + $('#fullImg').width());
-      console.log('WIN height: ' + $('#fullImg').height());
       var x = ($('#fullImg').height() * REimage.width) / REimage.height;
       if(x <= $('#fullImg').width()){
         var y = (x * REimage.height) / REimage.width;
@@ -149,8 +145,6 @@ function set(max){
         var y = ($('#fullImg').width() * REimage.height) / REimage.width;
         x = (y * REimage.width) / REimage.height;
       }
-      console.log('x : ' + x);
-      console.log('y : ' + y);
       $('#fullImg > div > img').css({
         "height": y,
         "width": x
@@ -162,10 +156,6 @@ function set(max){
       var REimage = new Image();
       REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
       REimage.onload = function() {
-        console.log('height: ' + REimage.height);
-        console.log('width: ' + REimage.width);
-        console.log('WIN width: ' + $('#fullImg').width());
-        console.log('WIN height: ' + $('#fullImg').height());
         var x = ($('#fullImg').height() * REimage.width) / REimage.height;
         if(x <= $('#fullImg').width()){
           var y = (x * REimage.height) / REimage.width;
@@ -173,8 +163,6 @@ function set(max){
           var y = ($('#fullImg').width() * REimage.height) / REimage.width;
           x = (y * REimage.width) / REimage.height;
         }
-        console.log('x : ' + x);
-        console.log('y : ' + y);
         $('#fullImg > div > img').css({
           "height": y,
           "width": x
@@ -188,10 +176,6 @@ function set(max){
       var REimage = new Image();
       REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
       REimage.onload = function() {
-        console.log('height: ' + REimage.height);
-        console.log('width: ' + REimage.width);
-        console.log('WIN width: ' + $('#fullImg').width());
-        console.log('WIN height: ' + $('#fullImg').height());
         var x = ($('#fullImg').height() * REimage.width) / REimage.height;
         if(x <= $('#fullImg').width()){
           var y = (x * REimage.height) / REimage.width;
@@ -199,8 +183,6 @@ function set(max){
           var y = ($('#fullImg').width() * REimage.height) / REimage.width;
           x = (y * REimage.width) / REimage.height;
         }
-        console.log('x : ' + x);
-        console.log('y : ' + y);
         $('#fullImg > div > img').css({
           "height": y,
           "width": x
