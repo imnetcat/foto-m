@@ -8,6 +8,7 @@
   <script src="pre-load.js"></script>
 </head>
 <body>
+  <div data-role="page" data-url="/photosession/" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="">
   <nav role='navigation' id="menu">
     <ul>
       <li><a href="">Пейзаж</a></li>
