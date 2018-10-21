@@ -2,21 +2,20 @@
 <html><head>
   <link rel="stylesheet" href="styles.css" type="text/css">
   <link rel="stylesheet" href="menu.css" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="/jquery_mobile/jquery.mobile-1.4.5.min.css" />
-  <script src="/jquery_mobile/jquery-1.11.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="/jquery_mobile/jquery.mobile-1.4.5.min.js"></script>
   <script src="functions.js"></script>
   <script src="pre-load.js"></script>
 </head>
 <body>
+  <div data-role="page" data-url="/photosession/" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="">
   <nav role='navigation' id="menu">
     <ul>
-      <li><a href="">Пейзаж</a></li>
-      <li><a href="">Фотосессия</a></li>
-      <li><a href="/photosession/">Репортаж</a></li>
-      <li><a href="">Ретуш</a></li>
-      <li><a href="">Другое</a></li>
+      <li><a rel="external", data-ajax="false" href="">Пейзаж</a></li>
+      <li><a rel="external", data-ajax="false" href="/photosession/">Фотосессия</a></li>
+      <li><a rel="external", data-ajax="false" href="">Репортаж</a></li>
+      <li><a rel="external", data-ajax="false" href="">Ретуш</a></li>
+      <li><a rel="external", data-ajax="false" href="">Другое</a></li>
     </ul>
   </nav>
   
@@ -45,6 +44,6 @@
       <div class="btn right"><div></div><span></span></div>
     </div>
   </div>
-  
+  </div>
 </body>
 </html>

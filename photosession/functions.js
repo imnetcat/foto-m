@@ -8,6 +8,10 @@ function build_shadow(){
   return '<div class="shadowItem"></div>';
 }
 function adaptation_2(){
+  $('.ui-loader-default').remove();
+  $(':focus').css({
+    "outline": ""
+  });
 }
 function adaptation_1(){
   console.log($('body').width());
@@ -33,7 +37,12 @@ function adaptation_1(){
     });
     $('.btn').css({   
       "width": "50%",
-      "opacity": "0.2"
+      "opacity": "0",
+      "cursor": "default"
+    });
+    $('.btn').html("");
+    $('.carosel').css({
+      "max-width": ""
     });
   }
 }
@@ -126,27 +135,61 @@ function set(max){
         current = n;
       }
     }
+    var REimage = new Image();
+    REimage.src = "/photosession/items/sets/"+Othis.attr('src').split('/')[2];
+    REimage.onload = function() {
+      var x = ($('#fullImg').height() * REimage.width) / REimage.height;
+      if(x <= $('#fullImg').width()){
+        var y = (x * REimage.height) / REimage.width;
+      }else{
+        var y = ($('#fullImg').width() * REimage.height) / REimage.width;
+        x = (y * REimage.width) / REimage.height;
+      }
+      $('#fullImg > div > img').css({
+        "height": y,
+        "width": x
+      });
     $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.attr('src').split('/')[2]);
     $('#fullImg').css({ "visibility": "visible"});
-    $(".left").click( () => {
+    $(".left").on('click touch swiperight', () => {
       if(current==1){ current = all }else{ current-- }
-      $('#fullImg > div > img').attr("src", "");
-      $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
-    })
-    $(".right").click( () => {
-      if(current==all){ current = 1 }else{ current++ }
-      $('#fullImg > div > img').attr("src", "");
-      $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
+      var REimage = new Image();
+      REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
+      REimage.onload = function() {
+        var x = ($('#fullImg').height() * REimage.width) / REimage.height;
+        if(x <= $('#fullImg').width()){
+          var y = (x * REimage.height) / REimage.width;
+        }else{
+          var y = ($('#fullImg').width() * REimage.height) / REimage.width;
+          x = (y * REimage.width) / REimage.height;
+        }
+        $('#fullImg > div > img').css({
+          "height": y,
+          "width": x
+        });
+        $('#fullImg > div > img').attr("src", "");
+        $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
+      }
     });
-    $(".carousel").on( "swipeleft", function(){ 
+    $(".right").on('click touch swipeleft', () => {
       if(current==all){ current = 1 }else{ current++ }
-      $('#fullImg > div > img').attr("src", "");
-      $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
-    });
-    $(".carousel").on( "swiperight", function(){
-      if(current==0){ current = all }else{ current-- }
-      $('#fullImg > div > img').attr("src", "");
-      $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
+      var REimage = new Image();
+      REimage.src = "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2];
+      REimage.onload = function() {
+        var x = ($('#fullImg').height() * REimage.width) / REimage.height;
+        if(x <= $('#fullImg').width()){
+          var y = (x * REimage.height) / REimage.width;
+        }else{
+          var y = ($('#fullImg').width() * REimage.height) / REimage.width;
+          x = (y * REimage.width) / REimage.height;
+        }
+        $('#fullImg > div > img').css({
+          "height": y,
+          "width": x
+        });
+        $('#fullImg > div > img').attr("src", "");
+        $('#fullImg > div > img').attr("src", "/photosession/items/sets/"+Othis.parent().parent().children(".item:nth-child("+current+")").children(1).attr('src').split('/')[2]);
+      }
     });
     $('.fil-close-btn, .close-mask').click( () => {
       $('#fullImg').css('visibility', 'hidden');
@@ -155,6 +198,7 @@ function set(max){
       $(".right").off("click");
       $('#fullImg .fil-close-btn').off("click");
     });
+    }
   });
 }
 
