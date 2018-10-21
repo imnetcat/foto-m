@@ -11,6 +11,7 @@
   <div data-role="page" data-url="/photosession/" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="">
   <nav role='navigation' id="menu">
     <ul>
+      <li><a rel="external", data-ajax="false" href="/contacts/">Контакты</a></li>
       <li><a rel="external", data-ajax="false" href="">Пейзаж</a></li>
       <li><a rel="external", data-ajax="false" href="/photosession/">Фотосессия</a></li>
       <li><a rel="external", data-ajax="false" href="">Репортаж</a></li>
