@@ -140,13 +140,13 @@ function set(max){
     REimage.onload = function() {
       console.log('height: ' + REimage.height);
       console.log('width: ' + REimage.width);
-      console.log('WIN width: ' + $('.carousel').width);
-      console.log('WIN height: ' + $('.carousel').height);
-      var x = ($('.carousel').height * REimage.width) / REimage.height;
-      if(x <= $('.carousel').width){
+      console.log('WIN width: ' + $('.carousel').width());
+      console.log('WIN height: ' + $('.carousel').height());
+      var x = ($('.carousel').height() * REimage.width) / REimage.height;
+      if(x <= $('.carousel').width()){
         var y = (x * REimage.height) / REimage.width;
       }else{
-        var y = ($('.carousel').width * REimage.height) / REimage.width;
+        var y = ($('.carousel').width() * REimage.height) / REimage.width;
         x = (y * REimage.width) / REimage.height;
       }
       console.log('x : ' + x);
