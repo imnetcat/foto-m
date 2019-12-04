@@ -1,1 +1,1 @@
-"# guskova-olga-foto" 
+"# foto" 
